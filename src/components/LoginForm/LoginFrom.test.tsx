@@ -7,25 +7,38 @@ import LoginForm from "./LoginForm";
 describe("Given the LogInForm component", () => {
   describe("When it's invoked", () => {
     test("Then it should render one 'Username' label", () => {
+      const labelText = "Username";
       render(
         <Provider store={store}>
           <LoginForm />
         </Provider>
       );
 
-      expect(screen.getAllByText("Username")).toHaveLength(1);
+      expect(screen.getAllByText(labelText)).toHaveLength(1);
     });
 
     test("Then it should render one 'Password' label", () => {
+      const labelText = "Password";
       render(
         <Provider store={store}>
           <LoginForm />
         </Provider>
       );
 
-      expect(screen.getAllByText("Password")).toHaveLength(1);
+      expect(screen.getAllByText(labelText)).toHaveLength(1);
+    });
+
+    test("Then it should render a button", () => {
+      render(
+        <Provider store={store}>
+          <LoginForm />
+        </Provider>
+      );
+
+      expect(screen.getByRole("button")).toBeInTheDocument();
     });
   });
+
   describe("When the word 'Nois' is written to the username input field", () => {
     test("Then the value of the username input field should be 'Nois'", () => {
       const inputText = "Nois";
@@ -41,6 +54,7 @@ describe("Given the LogInForm component", () => {
       expect(screen.getByLabelText(labelText)).toHaveValue(inputText);
     });
   });
+
   describe("When the word 'Nois' is written to the password input field", () => {
     test("Then the value of the password input field should be 'Nois'", () => {
       const inputText = "Nois";
