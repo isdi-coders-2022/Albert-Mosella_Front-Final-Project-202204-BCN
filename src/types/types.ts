@@ -8,3 +8,14 @@ export interface UserInfo {
   name: string;
   username: string;
 }
+
+export interface UserLogin {
+  username: string;
+  password: string;
+}
+
+export interface ResponseApi {
+  data: {
+    token: string;
+  };
+}
