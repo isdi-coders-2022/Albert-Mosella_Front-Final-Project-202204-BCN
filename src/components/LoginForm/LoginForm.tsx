@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store/store";
-import { loginThunk } from "../../redux/thunks/userThunks";
+import { userLoginThunk } from "../../redux/thunks/userThunks/userThunks";
 import LoginFormStyle from "./LoginFormStyle";
 
 const LoginForm = (): JSX.Element => {
@@ -25,7 +25,7 @@ const LoginForm = (): JSX.Element => {
     if (formValues.username === "" || formValues.password === "") {
       return;
     }
-    dispatch(loginThunk(formValues));
+    dispatch(userLoginThunk(formValues));
     setFormValues(initialFormValue);
   };
   return (
