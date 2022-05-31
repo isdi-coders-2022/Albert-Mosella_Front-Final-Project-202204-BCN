@@ -38,5 +38,5 @@
 - [ ] Details Property Component:
       -Render a received image, text with price and 3 icons with a number next to each icon
 
-- [ ] Featured List Property Component:
-      -Render a list of a maximum of 6 featured Property Components
+- [ ] Favorite List Property Component:
+      -Render a list of a maximum of 6 favorites Property Components
