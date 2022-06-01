@@ -1,6 +1,6 @@
 import { rest } from "msw";
 
-export const mockTokenKey = "KJASDH123JK21H3K1JH3KJ2H13KAJ";
+export const mockTokenKey: string = "MARIPURI666MARIPURI666MARIPURI";
 
 export const handlers = [
   rest.post(`${process.env.REACT_APP_API_URL}users/login`, (_, res, ctx) =>
