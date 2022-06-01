@@ -25,36 +25,35 @@ const LoginForm = (): JSX.Element => {
     dispatch(userLoginThunk(formValues));
     setFormValues(initialFormValue);
   };
+
   return (
-    <>
-      <LoginFormStyle>
-        <form onSubmit={handleSubmit} noValidate>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            id="username"
-            value={formValues.username}
-            onChange={handleInputChange}
-            autoComplete="off"
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            value={formValues.password}
-            onChange={handleInputChange}
-            autoComplete="off"
-          />
-          <button
-            className="form-button"
-            type="submit"
-            disabled={formValues.username === "" || formValues.password === ""}
-          >
-            Login
-          </button>
-        </form>
-      </LoginFormStyle>
-    </>
+    <LoginFormStyle>
+      <form onSubmit={handleSubmit} noValidate>
+        <label htmlFor="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          value={formValues.username}
+          onChange={handleInputChange}
+          autoComplete="off"
+        />
+        <label htmlFor="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          value={formValues.password}
+          onChange={handleInputChange}
+          autoComplete="off"
+        />
+        <button
+          className="form-button"
+          type="submit"
+          disabled={formValues.username === "" || formValues.password === ""}
+        >
+          Login
+        </button>
+      </form>
+    </LoginFormStyle>
   );
 };
 

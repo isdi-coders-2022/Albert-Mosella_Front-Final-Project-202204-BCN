@@ -10,7 +10,7 @@ const HeaderContainer = styled.div`
     margin: 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -39,7 +39,16 @@ const HeaderContainer = styled.div`
     padding: 0px;
 
     li {
-      padding: 20px 35px;
+      padding: 10px 20px;
+      button {
+        margin-right: 20px;
+        width: 140px;
+        height: 30px;
+        border-top-right-radius: 20px;
+        background: orange;
+        font-size: 1.2em;
+        text-align: left;
+      }
     }
 
     a {
