@@ -68,7 +68,6 @@ const RegisterForm = (): JSX.Element => {
           </button>
         </form>
       </RegisterFormStyle>
-      ;
     </>
   );
 };

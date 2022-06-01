@@ -5,17 +5,19 @@ const Header = () => {
   return (
     <HeaderContainer>
       <header>
-        <div className="company-logo">
-          <img src="images/icons8-cebada-100.png" alt="cebada" />
-          <h1>Rustik</h1>
-        </div>
         <nav>
           <ul>
-            <li>
-              <NavLink to="/home">Home</NavLink>
+            <li className="company-logo">
+              <img src="images/icons8-cebada-100.png" alt="cebada" />
+              <NavLink to="/home">
+                <h1>Rustik</h1>
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/allproperties">All properties</NavLink>
+              <NavLink to="/allproperties">Properties</NavLink>
+            </li>
+            <li>
+              <button>Login</button>
             </li>
           </ul>
         </nav>
