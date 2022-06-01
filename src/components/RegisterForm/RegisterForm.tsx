@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store/store";
-import { userLoginThunk } from "../../redux/thunks/userThunks/userThunks";
-import LoginFormStyle from "./LoginFormStyle";
+import { userRegisterThunk } from "../../redux/thunks/userThunks/userThunks";
 
-const LoginForm = (): JSX.Element => {
+import RegisterFormStyle from "./RegisterFormStyle";
+
+const RegisterForm = (): JSX.Element => {
   const dispatch: AppDispatch = useDispatch();
 
   const initialFormValue = {
+    name: "",
     username: "",
     password: "",
   };
@@ -22,13 +24,21 @@ const LoginForm = (): JSX.Element => {
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    dispatch(userLoginThunk(formValues));
+    dispatch(userRegisterThunk(formValues));
     setFormValues(initialFormValue);
   };
   return (
     <>
-      <LoginFormStyle>
+      <RegisterFormStyle>
         <form onSubmit={handleSubmit} noValidate>
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            value={formValues.name}
+            onChange={handleInputChange}
+            autoComplete="off"
+          />
           <label htmlFor="username">Username</label>
           <input
             type="text"
@@ -48,15 +58,19 @@ const LoginForm = (): JSX.Element => {
           <button
             className="form-button"
             type="submit"
-            disabled={formValues.username === "" || formValues.password === ""}
+            disabled={
+              formValues.username === "" ||
+              formValues.password === "" ||
+              formValues.name === ""
+            }
           >
-            Login
+            Register
           </button>
         </form>
-      </LoginFormStyle>
+      </RegisterFormStyle>
       ;
     </>
   );
 };
 
-export default LoginForm;
+export default RegisterForm;

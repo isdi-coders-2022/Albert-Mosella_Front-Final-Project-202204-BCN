@@ -26,6 +26,7 @@ describe("Given the LogInForm component", () => {
       expect(screen.getAllByText("Password")).toHaveLength(1);
     });
   });
+
   describe("When the word 'Nois' is written to the username input field", () => {
     test("Then the value of the username input field should be 'Nois'", () => {
       const inputText = "Nois";
@@ -41,6 +42,7 @@ describe("Given the LogInForm component", () => {
       expect(screen.getByLabelText(labelText)).toHaveValue(inputText);
     });
   });
+
   describe("When the word 'Nois' is written to the password input field", () => {
     test("Then the value of the password input field should be 'Nois'", () => {
       const inputText = "Nois";
@@ -54,6 +56,27 @@ describe("Given the LogInForm component", () => {
 
       userEvent.type(screen.getByLabelText(labelText), inputText);
       expect(screen.getByLabelText(labelText)).toHaveValue(inputText);
+    });
+  });
+
+  describe("When the username and password input fields are fill and the button clicked", () => {
+    test("Then the value of the username and password input fields should be empty", () => {
+      const inputText = "Nois";
+      const labelTextPassword = "Password";
+      const labelTextUsername = "Username";
+
+      render(
+        <Provider store={store}>
+          <LoginForm />
+        </Provider>
+      );
+
+      userEvent.type(screen.getByLabelText(labelTextPassword), inputText);
+      userEvent.type(screen.getByLabelText(labelTextUsername), inputText);
+      const button = screen.getByRole("button");
+      userEvent.click(button);
+      expect(screen.getByLabelText(labelTextPassword)).toHaveValue("");
+      expect(screen.getByLabelText(labelTextUsername)).toHaveValue("");
     });
   });
 });

@@ -1,6 +1,6 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
-import { UserInfo, UserLogin } from "../../../types/types";
+import { UserInfo, UserLogin, UserRegister } from "../../../types/types";
 import { logInActionCreator } from "../../features/userSlice";
 import { AppDispatch } from "../../store/store";
 
@@ -16,4 +16,12 @@ export const userLoginThunk =
     const userInfo: UserInfo = jwtDecode(token);
 
     dispatch(logInActionCreator(userInfo));
+  };
+
+export const userRegisterThunk =
+  (formData: UserRegister) => async (dispatch: AppDispatch) => {
+    await axios.post(
+      `${process.env.REACT_APP_API_URL}users/register`,
+      formData
+    );
   };

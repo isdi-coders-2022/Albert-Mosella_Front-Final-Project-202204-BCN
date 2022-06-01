@@ -19,3 +19,9 @@ export interface ResponseApi {
     token: string;
   };
 }
+
+export interface UserRegister {
+  name: string;
+  username: string;
+  password: string;
+}
