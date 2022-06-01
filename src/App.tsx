@@ -1,11 +1,12 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import Header from "./components/Header/Header";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 
 function App() {
   return (
     <>
-      <h1>Rustik</h1>
+      <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginPage />} />
