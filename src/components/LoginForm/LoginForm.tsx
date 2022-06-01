@@ -54,7 +54,6 @@ const LoginForm = (): JSX.Element => {
           </button>
         </form>
       </LoginFormStyle>
-      ;
     </>
   );
 };
