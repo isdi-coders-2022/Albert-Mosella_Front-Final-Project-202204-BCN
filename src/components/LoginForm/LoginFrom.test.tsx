@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
 import LoginForm from "./LoginForm";
 
@@ -13,7 +14,9 @@ describe("Given the RegisterForm component", () => {
     test("Then it should render the labels 'Username' and 'Password'", () => {
       render(
         <Provider store={store}>
-          <LoginForm />
+          <BrowserRouter>
+            <LoginForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -26,7 +29,9 @@ describe("Given the RegisterForm component", () => {
     test("Then the value of the username input field should be 'Nois'", () => {
       render(
         <Provider store={store}>
-          <LoginForm />
+          <BrowserRouter>
+            <LoginForm />
+          </BrowserRouter>
         </Provider>
       );
 
@@ -41,7 +46,9 @@ describe("Given the RegisterForm component", () => {
     test("Then the value of the username and password input fields should be empty", () => {
       render(
         <Provider store={store}>
-          <LoginForm />
+          <BrowserRouter>
+            <LoginForm />
+          </BrowserRouter>
         </Provider>
       );
 
