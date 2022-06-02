@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { AppDispatch } from "../../redux/store/store";
 import { userLoginThunk } from "../../redux/thunks/userThunks/userThunks";
 import LoginFormStyle from "./LoginFormStyle";
@@ -52,6 +53,7 @@ const LoginForm = (): JSX.Element => {
         >
           Login
         </button>
+        <NavLink to="/register">Register</NavLink>
       </form>
     </LoginFormStyle>
   );

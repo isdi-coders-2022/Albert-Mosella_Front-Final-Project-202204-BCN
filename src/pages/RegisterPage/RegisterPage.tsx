@@ -1,13 +1,20 @@
-import { NavLink } from "react-router-dom";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
+import styled from "styled-components";
 
 const RegisterPage = (): JSX.Element => {
+  const RegisterPageStyle = styled.div`
+    text-align: center;
+
+    a {
+      text-decoration: none;
+    }
+  `;
+
   return (
-    <>
+    <RegisterPageStyle>
       <h2>User Register</h2>
       <RegisterForm />
-      <NavLink to="/login">Go back to Login</NavLink>
-    </>
+    </RegisterPageStyle>
   );
 };
 
