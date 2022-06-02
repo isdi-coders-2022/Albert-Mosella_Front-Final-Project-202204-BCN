@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { AppDispatch } from "../../redux/store/store";
+import { useAppDispatch } from "../../redux/hooks";
 import { userRegisterThunk } from "../../redux/thunks/userThunks/userThunks";
 
 import RegisterFormStyle from "./RegisterFormStyle";
 
 const RegisterForm = (): JSX.Element => {
-  const dispatch: AppDispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const initialFormValue = {
     name: "",
