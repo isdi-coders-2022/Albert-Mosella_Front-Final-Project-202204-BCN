@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 const HeaderContainer = styled.div`
   width: 100%;
-  height: 100px;
+  height: 80px;
   background-color: black;
-  padding-top: 10px;
 
   header {
     margin: 0;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -23,7 +23,7 @@ const HeaderContainer = styled.div`
   h1 {
     color: white;
     text-align: center;
-    margin: 15px;
+    font-size: 1.2em;
   }
 
   img {
@@ -42,11 +42,11 @@ const HeaderContainer = styled.div`
       padding: 10px 20px;
       button {
         margin-right: 20px;
-        width: 140px;
+        width: 90px;
         height: 30px;
         border-top-right-radius: 20px;
         background: orange;
-        font-size: 1.2em;
+        font-size: 1em;
         text-align: left;
       }
     }
@@ -54,7 +54,7 @@ const HeaderContainer = styled.div`
     a {
       color: white;
       text-decoration: none;
-      font-size: 1.3em;
+      font-size: 1.2em;
       transition: 0.3s;
     }
 
