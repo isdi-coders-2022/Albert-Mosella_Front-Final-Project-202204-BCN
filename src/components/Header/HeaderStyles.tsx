@@ -42,7 +42,7 @@ const HeaderContainer = styled.div`
       padding: 10px 20px;
       button {
         margin-right: 20px;
-        width: 90px;
+        width: 80px;
         height: 30px;
         border-top-right-radius: 20px;
         background: orange;
