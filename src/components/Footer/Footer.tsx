@@ -11,7 +11,7 @@ const Footer = () => {
       </p>
       <div className="company-logo">
         <img src="images/icons8-cebada-100.png" alt="cebada" />
-        <h1>Rustik</h1>
+        <h3>Rustik</h3>
       </div>
     </FooterContainer>
   );
