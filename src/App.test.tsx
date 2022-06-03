@@ -4,7 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import store from "./redux/store/store";
 
-describe("Given the Property component", () => {
+describe("Given the App component", () => {
   describe("When it's invoked", () => {
     test("Then it should render a list element", () => {
       const expectedLenght = 3;
