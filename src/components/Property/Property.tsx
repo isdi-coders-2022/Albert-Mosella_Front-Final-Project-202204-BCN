@@ -1,6 +1,6 @@
 import PropertyContainer from "./PropertySyles";
 
-const Property = () => {
+const Property = (/* property: IProperty */): JSX.Element => {
   return (
     <PropertyContainer>
       <img src="images/casa.jpg" alt="una puta casa" />
