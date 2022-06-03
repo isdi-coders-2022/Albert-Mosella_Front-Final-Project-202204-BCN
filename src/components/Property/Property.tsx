@@ -1,11 +1,16 @@
+import { IProperty } from "../../types/types";
 import PropertyContainer from "./PropertySyles";
 
-const Property = (/* property: IProperty */): JSX.Element => {
+interface Props {
+  property: IProperty;
+}
+
+const Property = (props: Props): JSX.Element => {
   return (
     <PropertyContainer>
-      <img src="images/casa.jpg" alt="una puta casa" />
+      <img src={props.property.image} alt="una puta casa" />
       <div className="property-title">
-        <h2>Casa de mierda</h2>
+        <h2>{props.property.name}</h2>
         <span>450.000€</span>
       </div>
       <ul className="property-icons">
