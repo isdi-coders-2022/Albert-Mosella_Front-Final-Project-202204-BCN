@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import mockProperty from "../../mocks/mockProperty";
 
 import store from "../../redux/store/store";
 import Property from "./Property";
@@ -13,7 +14,7 @@ describe("Given the Property component", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <Property />
+            <Property property={mockProperty} />
           </BrowserRouter>
         </Provider>
       );

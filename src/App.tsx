@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import { logInActionCreator } from "./redux/features/userSlice";
 import { useAppDispatch, useAppSelector } from "./redux/hooks";
+import { loadPropertiesThunk } from "./redux/thunks/propertyThunks/propertyThunks";
 import { User, UserInfo } from "./types/types";
 
 function App() {
@@ -15,6 +16,10 @@ function App() {
   const { logged } = useAppSelector((state: { user: User }) => state.user);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    dispatch(loadPropertiesThunk());
+  }, [dispatch]);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
