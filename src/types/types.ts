@@ -25,3 +25,26 @@ export interface UserRegister {
   username: string;
   password: string;
 }
+
+export interface IProperty {
+  typeOf: string;
+  adress: string;
+  name: string;
+  surface: number;
+  price: number;
+  bedrooms: number;
+  bathrooms: number;
+  year: number;
+  description: string;
+  image: string;
+  views: boolean;
+  airConditioning: boolean;
+  heating: boolean;
+  parking: boolean;
+  pool: boolean;
+  fireplace: boolean;
+  garden: boolean;
+  laundryRoom: boolean;
+  storage: boolean;
+  terrace: boolean;
+}
