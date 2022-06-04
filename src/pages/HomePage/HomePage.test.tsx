@@ -7,7 +7,7 @@ import HomePage from "./HomePage";
 describe("Given a LoginPage Component", () => {
   describe("When it's invoked", () => {
     test("Then it should render the text 'You are in good hands'", () => {
-      const expectedResult: string = "You are in good hands";
+      const expectedResult: string = "You're in good hands";
 
       render(
         <Provider store={store}>
