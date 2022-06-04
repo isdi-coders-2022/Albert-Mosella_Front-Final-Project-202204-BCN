@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 const HeaderContainer = styled.div`
-  width: 100%;
+  width: 100vw;
   height: 80px;
   background-color: black;
 
   header {
     margin: 0;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -31,6 +32,7 @@ const HeaderContainer = styled.div`
   }
 
   ul {
+    width: 100vw;
     display: flex;
     list-style: none;
     justify-content: space-between;
@@ -48,6 +50,7 @@ const HeaderContainer = styled.div`
         background: orange;
         font-size: 1em;
         text-align: left;
+        border: none;
       }
     }
 

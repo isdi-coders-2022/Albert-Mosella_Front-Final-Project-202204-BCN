@@ -10,7 +10,7 @@ const Property = (props: Props): JSX.Element => {
     <PropertyContainer>
       <img src={props.property.image} alt="una puta casa" />
       <div className="property-title">
-        <h2>{props.property.name}</h2>
+        <h4>{props.property.name}</h4>
         <span>450.000€</span>
       </div>
       <ul className="property-icons">
