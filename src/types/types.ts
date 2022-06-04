@@ -47,4 +47,5 @@ export interface IProperty {
   laundryRoom: boolean;
   storage: boolean;
   terrace: boolean;
+  id: string;
 }
