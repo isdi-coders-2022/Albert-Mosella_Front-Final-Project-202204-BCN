@@ -24,6 +24,7 @@ export const mockProperties = [
     laundryRoom: false,
     storage: true,
     terrace: true,
+    id: "6299efd767d5ef56ab0e6bb8",
   },
 ];
 
