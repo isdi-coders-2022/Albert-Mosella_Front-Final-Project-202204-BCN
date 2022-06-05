@@ -12,7 +12,7 @@ const HomePage = (): JSX.Element => {
         simul atque integre iudicante itaque aiunt hanc quasi involuta aperiri,
         altera occulta quaedam et voluptatem accusantium doloremque.
       </p>
-      <button>Learn more</button>
+      <button className="long-button">Learn more</button>
       <img
         src="images/casa-home.jpg"
         alt="casa-japonesa"

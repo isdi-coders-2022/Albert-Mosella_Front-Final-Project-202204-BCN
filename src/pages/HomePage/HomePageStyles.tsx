@@ -29,7 +29,7 @@ const HomePageContainer = styled.div`
     margin: 15px 35px;
   }
 
-  button {
+  .long-button {
     margin-right: 20px;
     width: 250px;
     height: 40px;
