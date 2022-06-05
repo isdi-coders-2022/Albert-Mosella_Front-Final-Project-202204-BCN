@@ -5,6 +5,7 @@ import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import PropertiesPage from "./pages/PropertiesPage/PropertiesPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import { logInActionCreator } from "./redux/features/userSlice";
 import { useAppDispatch, useAppSelector } from "./redux/hooks";
@@ -38,6 +39,7 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/allproperties" element={<PropertiesPage />} />
       </Routes>
       <Footer />
     </>
