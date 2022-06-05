@@ -19,6 +19,9 @@ const PropertyContainer = styled.div`
     align-items: center;
     padding: 0 20px;
     border-bottom: 2px solid #e4e4e4;
+    h4 {
+      font-size: 1.2em;
+    }
   }
 
   span {

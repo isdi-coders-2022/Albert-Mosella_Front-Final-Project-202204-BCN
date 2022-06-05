@@ -7,6 +7,7 @@ const RegisterFormStyle = styled.div`
   flex-direction: column;
   align-items: center;
   font-size: 1.2em;
+  padding-bottom: 30px;
 
   form {
     display: flex;
