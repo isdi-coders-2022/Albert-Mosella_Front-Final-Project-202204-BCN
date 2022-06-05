@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-/* import { useAppDispatch } from "../../redux/hooks"; */
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../../redux/hooks";
+import { createPropertyThunk } from "../../redux/thunks/propertyThunks/propertyThunks";
 import PropertyFormStyle from "./PropertyFormStyles";
 
 const PropertyForm = (): JSX.Element => {
-  /* const dispatch = useAppDispatch(); */
+  const dispatch = useAppDispatch();
+
+  const navigate = useNavigate();
 
   const initialFormValue = {
     typeOf: "",
@@ -27,6 +30,7 @@ const PropertyForm = (): JSX.Element => {
     laundryRoom: false,
     storage: false,
     terrace: false,
+    id: "",
   };
 
   const [formValues, setFormValues] = useState(initialFormValue);
@@ -39,8 +43,9 @@ const PropertyForm = (): JSX.Element => {
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    /* dispatch(createPropertyThunk(formValues)); */
+    dispatch(createPropertyThunk(formValues));
     setFormValues(initialFormValue);
+    navigate("/home");
   };
   return (
     <>
@@ -126,13 +131,6 @@ const PropertyForm = (): JSX.Element => {
             onChange={handleInputChange}
             autoComplete="off"
           />
-          <label htmlFor="views">Views</label>
-          <input
-            type="checkbox"
-            id="views"
-            onChange={handleInputChange}
-            autoComplete="off"
-          />
           <button
             className="form-button"
             type="submit"
@@ -142,9 +140,9 @@ const PropertyForm = (): JSX.Element => {
               formValues.name === ""
             }
           >
-            Register
+            Save
           </button>
-          <NavLink to="/login">Go back to Login</NavLink>
+          <NavLink to="/home">Go back to Home</NavLink>
         </form>
       </PropertyFormStyle>
     </>
