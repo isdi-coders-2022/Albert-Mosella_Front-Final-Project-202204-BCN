@@ -1,4 +1,5 @@
 import axios from "axios";
+import { IProperty } from "../../../types/types";
 import {
   deletePropertyActionCreator,
   loadAllPropertiesActionCreator,
@@ -20,4 +21,9 @@ export const deletePropertyThunk =
     if (status === 200) {
       dispatch(deletePropertyActionCreator(id));
     }
+  };
+
+export const createPropertyThunk =
+  (formData: IProperty) => async (dispatch: AppDispatch) => {
+    await axios.post(`${process.env.REACT_APP_API_URL}properties/`, formData);
   };
