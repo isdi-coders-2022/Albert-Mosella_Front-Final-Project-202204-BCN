@@ -51,6 +51,7 @@ const HeaderContainer = styled.div`
         font-size: 1em;
         text-align: left;
         border: none;
+        cursor: pointer;
       }
     }
 

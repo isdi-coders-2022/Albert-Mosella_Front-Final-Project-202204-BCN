@@ -28,7 +28,7 @@ function App() {
     if (token as string) {
       const { username, name }: UserInfo = jwtDecode(token as string);
       dispatch(logInActionCreator({ username, name }));
-      navigate("/home");
+      navigate("/allproperties");
     }
   }, [dispatch, logged, navigate]);
 

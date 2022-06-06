@@ -50,6 +50,9 @@ const LoginFormStyle = styled.div`
 
   a {
     padding: 0 0 15px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
   }
 `;
 

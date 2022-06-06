@@ -14,6 +14,18 @@ const PropertiesPageContainer = styled.div`
     background: linear-gradient(90deg, #ffac12 0%, #000000 94.96%);
     border-radius: 2px;
   }
+
+  .long-button {
+    margin-top: 15px;
+    width: 250px;
+    height: 40px;
+    border-top-right-radius: 20px;
+    background: black;
+    font-size: 1em;
+    text-align: left;
+    border: none;
+    color: #ffac12;
+  }
 `;
 
 export default PropertiesPageContainer;
