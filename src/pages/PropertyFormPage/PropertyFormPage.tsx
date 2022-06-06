@@ -14,6 +14,7 @@ const PropertyFormPage = (): JSX.Element => {
   if (!token) {
     navigate("/allproperties");
   }
+
   return (
     <PropertyFormPageContainer>
       <h2>Create or edit a property</h2>
