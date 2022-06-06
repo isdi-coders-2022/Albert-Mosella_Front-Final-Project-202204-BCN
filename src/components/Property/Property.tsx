@@ -7,12 +7,15 @@ interface Props {
 }
 
 const Property = (props: Props): JSX.Element => {
+  const token = localStorage.getItem("token");
+
   return (
     <PropertyContainer>
       <img src={props.property.image} alt="una puta casa" />
       <div className="property-title">
         <h4>{props.property.name}</h4>
-        <Button /* id={props.property.id} */ />
+        {token ? <Button id={props.property.id} /> : ""}
+
         <span>450.000€</span>
       </div>
       <ul className="property-icons">

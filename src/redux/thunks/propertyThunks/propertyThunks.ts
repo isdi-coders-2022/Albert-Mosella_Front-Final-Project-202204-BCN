@@ -16,7 +16,7 @@ export const loadPropertiesThunk = () => async (dispatch: AppDispatch) => {
 
 export const deletePropertyThunk =
   (id: string) => async (dispatch: AppDispatch) => {
-    const { status } = await axios.delete(`${url}${id}`);
+    const { status } = await axios.delete(`${url}properties/${id}`);
 
     if (status === 200) {
       dispatch(deletePropertyActionCreator(id));
