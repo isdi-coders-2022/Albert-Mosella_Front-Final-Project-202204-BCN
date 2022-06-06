@@ -1,6 +1,6 @@
 import styled from "styled-components";
-/* import { useAppDispatch } from "../../redux/hooks";
-import { deletePropertyThunk } from "../../redux/thunks/propertyThunks/propertyThunks"; */
+import { useAppDispatch } from "../../redux/hooks";
+import { deletePropertyThunk } from "../../redux/thunks/propertyThunks/propertyThunks";
 
 const ButtonContainer = styled.div`
   button {
@@ -11,11 +11,15 @@ const ButtonContainer = styled.div`
   }
 `;
 
-const Button = (/* id */): JSX.Element => {
-  /* const dispatch = useAppDispatch; */
+interface Props {
+  id: string;
+}
+
+const Button = ({ id }: Props): JSX.Element => {
+  const dispatch = useAppDispatch();
 
   const handleDelete = (): void => {
-    /* dispatch(deletePropertyThunk(id)); */
+    dispatch(deletePropertyThunk(id));
   };
 
   return (

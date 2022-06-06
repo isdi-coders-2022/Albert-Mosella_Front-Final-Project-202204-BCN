@@ -8,11 +8,12 @@ describe("Given a Button Component", () => {
   describe("When it's invoked", () => {
     test("Then it should render the text 'X'", () => {
       const expectedResult: string = "X";
+      const id = "Hola";
 
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <Button />
+            <Button id={id} />
           </BrowserRouter>
         </Provider>
       );
