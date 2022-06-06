@@ -66,6 +66,7 @@ const PropertyForm = (): JSX.Element => {
           <label htmlFor="typeOf">Type of</label>
           <input
             type="text"
+            maxLength={16}
             id="typeOf"
             value={formValues.typeOf}
             onChange={handleInputChange}
@@ -82,6 +83,7 @@ const PropertyForm = (): JSX.Element => {
           <label htmlFor="name">Name</label>
           <input
             type="text"
+            maxLength={16}
             id="name"
             value={formValues.name}
             onChange={handleInputChange}
@@ -90,6 +92,7 @@ const PropertyForm = (): JSX.Element => {
           <label htmlFor="surface">Surface</label>
           <input
             type="number"
+            maxLength={3}
             id="surface"
             value={formValues.surface}
             onChange={handleInputChange}
@@ -98,6 +101,7 @@ const PropertyForm = (): JSX.Element => {
           <label htmlFor="price">Price</label>
           <input
             type="number"
+            maxLength={8}
             id="price"
             value={formValues.price}
             onChange={handleInputChange}
@@ -106,6 +110,7 @@ const PropertyForm = (): JSX.Element => {
           <label htmlFor="bedrooms">Bedrooms</label>
           <input
             type="number"
+            maxLength={2}
             id="bedrooms"
             value={formValues.bedrooms}
             onChange={handleInputChange}
@@ -114,6 +119,7 @@ const PropertyForm = (): JSX.Element => {
           <label htmlFor="bathrooms">Bathrooms</label>
           <input
             type="number"
+            maxLength={2}
             id="bathrooms"
             value={formValues.bathrooms}
             onChange={handleInputChange}
@@ -122,6 +128,7 @@ const PropertyForm = (): JSX.Element => {
           <label htmlFor="year">Year</label>
           <input
             type="number"
+            maxLength={4}
             id="year"
             value={formValues.year}
             onChange={handleInputChange}

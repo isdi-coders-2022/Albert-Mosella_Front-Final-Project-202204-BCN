@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../redux/hooks";
 
 import { userLoginThunk } from "../../redux/thunks/userThunks/userThunks";
@@ -8,6 +8,8 @@ import LoginFormStyle from "./LoginFormStyle";
 
 const LoginForm = (): JSX.Element => {
   const dispatch = useAppDispatch();
+
+  const navigate = useNavigate();
 
   const initialFormValue = {
     username: "",
@@ -26,6 +28,7 @@ const LoginForm = (): JSX.Element => {
     event.preventDefault();
     dispatch(userLoginThunk(formValues));
     setFormValues(initialFormValue);
+    navigate("/allproperties");
   };
 
   return (

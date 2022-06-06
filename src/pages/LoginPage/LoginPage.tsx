@@ -1,5 +1,6 @@
 import LoginForm from "../../components/LoginForm/LoginForm";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const LoginPageStyle = styled.div`
   text-align: center;
@@ -10,6 +11,12 @@ const LoginPageStyle = styled.div`
 `;
 
 const LoginPage = (): JSX.Element => {
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  if (token) {
+    navigate("/allproperties");
+  }
+
   return (
     <LoginPageStyle>
       <h2>User Login</h2>

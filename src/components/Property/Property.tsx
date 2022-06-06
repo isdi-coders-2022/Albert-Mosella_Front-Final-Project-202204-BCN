@@ -14,21 +14,20 @@ const Property = (props: Props): JSX.Element => {
       <img src={props.property.image} alt="una puta casa" />
       <div className="property-title">
         <h4>{props.property.name}</h4>
-        {token ? <Button id={props.property.id} /> : ""}
-
-        <span>450.000€</span>
+        {token && <Button id={props.property.id} />}
+        <span>{props.property.price}</span>
       </div>
       <ul className="property-icons">
         <li>
-          <span>3</span>
+          <span>{props.property.bedrooms}</span>
           <img src="images/dormitorio.png" alt="" />
         </li>
         <li>
-          <span>2</span>
+          <span>{props.property.bathrooms}</span>
           <img src="images/baño.png" alt="" />
         </li>
         <li>
-          <span>150</span>
+          <span>{props.property.surface}</span>
           <img src="images/superficie.png" alt="" />
         </li>
       </ul>
