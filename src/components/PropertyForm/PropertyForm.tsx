@@ -35,17 +35,29 @@ const PropertyForm = (): JSX.Element => {
 
   const [formValues, setFormValues] = useState(initialFormValue);
 
+  const handleCheckboxChange = (event: {
+    target: { id: string; checked: boolean };
+  }) => {
+    setFormValues({
+      ...formValues,
+      [event.target.id]: event.target.checked,
+    });
+  };
+
   const handleInputChange = (event: {
     target: { id: string; value: string };
   }) => {
-    setFormValues({ ...formValues, [event.target.id]: event.target.value });
+    setFormValues({
+      ...formValues,
+      [event.target.id]: event.target.value,
+    });
   };
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     dispatch(createPropertyThunk(formValues));
     setFormValues(initialFormValue);
-    navigate("/home");
+    navigate("/allproperties");
   };
   return (
     <>
@@ -130,6 +142,76 @@ const PropertyForm = (): JSX.Element => {
             value={formValues.image}
             onChange={handleInputChange}
             autoComplete="off"
+          />
+          <label htmlFor="views">Views</label>
+          <input
+            type="checkbox"
+            id="views"
+            checked={formValues.views}
+            onChange={handleCheckboxChange}
+          />
+          <label htmlFor="airConditioning">Air Conditioning</label>
+          <input
+            type="checkbox"
+            id="airConditioning"
+            checked={formValues.airConditioning}
+            onChange={handleCheckboxChange}
+          />
+          <label htmlFor="heating">Heating</label>
+          <input
+            type="checkbox"
+            id="heating"
+            checked={formValues.heating}
+            onChange={handleCheckboxChange}
+          />
+          <label htmlFor="parking">Parking</label>
+          <input
+            type="checkbox"
+            id="parking"
+            checked={formValues.parking}
+            onChange={handleCheckboxChange}
+          />
+          <label htmlFor="pool">Pool</label>
+          <input
+            type="checkbox"
+            id="pool"
+            checked={formValues.pool}
+            onChange={handleCheckboxChange}
+          />
+          <label htmlFor="fireplace">Fireplace</label>
+          <input
+            type="checkbox"
+            id="fireplace"
+            checked={formValues.fireplace}
+            onChange={handleCheckboxChange}
+          />
+          <label htmlFor="garden">Garden</label>
+          <input
+            type="checkbox"
+            id="garden"
+            checked={formValues.garden}
+            onChange={handleCheckboxChange}
+          />
+          <label htmlFor="laundryRoom">Laundry Room</label>
+          <input
+            type="checkbox"
+            id="laundryRoom"
+            checked={formValues.laundryRoom}
+            onChange={handleCheckboxChange}
+          />
+          <label htmlFor="storage">Storage</label>
+          <input
+            type="checkbox"
+            id="storage"
+            checked={formValues.storage}
+            onChange={handleCheckboxChange}
+          />
+          <label htmlFor="terrace">Terrace</label>
+          <input
+            type="checkbox"
+            id="terrace"
+            checked={formValues.terrace}
+            onChange={handleCheckboxChange}
           />
           <button
             className="form-button"
