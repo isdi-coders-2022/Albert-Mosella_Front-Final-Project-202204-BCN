@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { createPropertyThunk } from "../../redux/thunks/propertyThunks/propertyThunks";
+
 import PropertyFormStyle from "./PropertyFormStyles";
 
 const PropertyForm = (): JSX.Element => {
@@ -35,6 +36,13 @@ const PropertyForm = (): JSX.Element => {
 
   const [formValues, setFormValues] = useState(initialFormValue);
 
+  const { oneProperty } = useAppSelector((state) => state.oneProperty);
+  useEffect(() => {
+    if (oneProperty) {
+      setFormValues(oneProperty);
+    }
+  }, [oneProperty]);
+
   const handleCheckboxChange = (event: {
     target: { id: string; checked: boolean };
   }) => {
@@ -59,6 +67,7 @@ const PropertyForm = (): JSX.Element => {
     setFormValues(initialFormValue);
     navigate("/allproperties");
   };
+
   return (
     <>
       <PropertyFormStyle>
