@@ -1,5 +1,6 @@
 import { IProperty } from "../../types/types";
 import Button from "../Button/Button";
+import EditButton from "../EditButton/EditButton";
 import PropertyContainer from "./PropertySyles";
 
 interface Props {
@@ -15,6 +16,7 @@ const Property = (props: Props): JSX.Element => {
       <div className="property-title">
         <h4>{props.property.name}</h4>
         {token && <Button id={props.property.id} />}
+        {token && <EditButton id={props.property.id} />}
         <span>{props.property.price}</span>
       </div>
       <ul className="property-icons">
