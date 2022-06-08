@@ -1,4 +1,5 @@
 import { rest } from "msw";
+import mockProperty from "../../../../mocks/mockProperty";
 
 export const mockTokenKey: string = "MARIPURI666MARIPURI666MARIPURI";
 
@@ -37,5 +38,8 @@ export const handlers = [
   ),
   rest.get(`${process.env.REACT_APP_API_URL}properties/`, (_, res, ctx) =>
     res(ctx.status(200), ctx.json(mockProperties))
+  ),
+  rest.get(`${process.env.REACT_APP_API_URL}properties/`, (_, res, ctx) =>
+    res(ctx.status(200), ctx.json(mockProperty))
   ),
 ];
