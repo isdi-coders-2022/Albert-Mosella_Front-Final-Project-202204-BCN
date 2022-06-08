@@ -26,7 +26,7 @@ const EditPropertyPage = (): JSX.Element => {
 
   return (
     <EditPropertyPageContainer>
-      <h2>Create or edit a property</h2>
+      <h2>Edit a property</h2>
       <PropertyForm />
     </EditPropertyPageContainer>
   );

@@ -30,9 +30,7 @@ const Header = () => {
             </li>
             <li>
               {token ? (
-                <NavLink to="/home">
-                  <button onClick={handleLogout}>Logout</button>
-                </NavLink>
+                <button onClick={handleLogout}>Logout</button>
               ) : (
                 <NavLink to="/login">
                   <button>Login</button>
