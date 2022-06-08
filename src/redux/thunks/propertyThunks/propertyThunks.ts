@@ -35,3 +35,14 @@ export const getOnePorpertyThunk =
 
     dispatch(loadOnePropertyActionCreator(property));
   };
+
+export const editPorpertyThunk =
+  (id: string, propertyData: any) => async (dispatch: AppDispatch) => {
+    const {
+      data: { updatedProperty },
+    } = await axios.put(`${url}properties/${id}`, propertyData);
+
+    if (updatedProperty) {
+      dispatch(loadOnePropertyActionCreator(updatedProperty));
+    }
+  };
