@@ -75,9 +75,9 @@ describe("Given a getOnePorpertyThunk function", () => {
   });
 });
 
-describe("Given a deletePizzeriaThunk function", () => {
+describe("Given a deletePropertyThunk function", () => {
   describe("When it's called", () => {
-    test("Then it should dispatch the deletePizzeriaActionCreator", async () => {
+    test("Then it should dispatch the deletePropertyActionCreator", async () => {
       const dispatch = jest.fn();
 
       const deleteAction = deletePropertyActionCreator(mockProperty.id);
