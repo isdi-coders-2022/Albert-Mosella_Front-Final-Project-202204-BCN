@@ -24,4 +24,25 @@ describe("Given the Property component", () => {
       expect(result).toHaveLength(expectedLenght);
     });
   });
+
+  describe("When it's invoked and the user is logged", () => {
+    test("Then it should render 2 button elements", () => {
+      const expectedLenght = 2;
+      const token: string = "MARIPURI666MARIPURI666MARIPURI";
+      localStorage.setItem("token", token);
+
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <Property property={mockProperty} />
+          </BrowserRouter>
+        </Provider>
+      );
+
+      const result = screen.getAllByRole("button");
+
+      expect(result).toHaveLength(expectedLenght);
+      localStorage.removeItem("token");
+    });
+  });
 });
