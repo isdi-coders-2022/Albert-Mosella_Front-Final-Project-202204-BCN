@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { blankStateActionCreator } from "../../redux/features/onePropertySlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
   createPropertyThunk,
@@ -70,6 +71,7 @@ const PropertyForm = (): JSX.Element => {
     formValues.id
       ? dispatch(editPorpertyThunk(formValues.id, formValues))
       : dispatch(createPropertyThunk(formValues));
+    dispatch(blankStateActionCreator());
     setFormValues(initialFormValue);
     navigate("/allproperties");
   };

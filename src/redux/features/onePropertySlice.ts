@@ -38,10 +38,13 @@ const onePropertySlice = createSlice({
     loadOneProperty: (property, action: PayloadAction<IProperty>) => ({
       oneProperty: { ...action.payload },
     }),
+    blankState: () => initialState,
   },
 });
 
 export default onePropertySlice.reducer;
 
-export const { loadOneProperty: loadOnePropertyActionCreator } =
-  onePropertySlice.actions;
+export const {
+  loadOneProperty: loadOnePropertyActionCreator,
+  blankState: blankStateActionCreator,
+} = onePropertySlice.actions;
