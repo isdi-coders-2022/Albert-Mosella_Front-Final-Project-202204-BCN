@@ -1,6 +1,16 @@
-import { loadPropertiesThunk } from "./propertyThunks";
+import {
+  deletePropertyThunk,
+  getOnePorpertyThunk,
+  loadPropertiesThunk,
+} from "./propertyThunks";
 import { server } from "../mocks/server/server";
-import { loadAllPropertiesActionCreator } from "../../features/propertySlice";
+import {
+  deletePropertyActionCreator,
+  loadAllPropertiesActionCreator,
+} from "../../features/propertySlice";
+import { loadOnePropertyActionCreator } from "../../features/onePropertySlice";
+import mockProperty from "../../../mocks/mockProperty";
+import axios from "axios";
 
 beforeEach(() => server.listen());
 afterEach(() => server.resetHandlers());
@@ -42,6 +52,39 @@ describe("Given a loadPropertiesThunk function", () => {
       await thunk(dispatch);
 
       expect(dispatch).toHaveBeenCalledWith(expectedAction);
+    });
+  });
+});
+
+describe("Given a getOnePorpertyThunk function", () => {
+  describe("When it is called", () => {
+    test("It should dispatch loadOnePropertyActionCreator with api's data", async () => {
+      const dispatch = jest.fn();
+
+      axios.get = jest
+        .fn()
+        .mockResolvedValue({ data: mockProperty, status: 200 });
+
+      const expectedAction = loadOnePropertyActionCreator(mockProperty);
+
+      const thunk = getOnePorpertyThunk(mockProperty.id);
+      await thunk(dispatch);
+
+      expect(dispatch).toHaveBeenCalledWith(expectedAction);
+    });
+  });
+});
+
+describe("Given a deletePizzeriaThunk function", () => {
+  describe("When it's called", () => {
+    test("Then it should dispatch the deletePizzeriaActionCreator", async () => {
+      const dispatch = jest.fn();
+
+      const deleteAction = deletePropertyActionCreator(mockProperty.id);
+      const thunk = deletePropertyThunk(mockProperty.id);
+
+      await thunk(dispatch);
+      expect(dispatch).toHaveBeenCalledWith(deleteAction);
     });
   });
 });
