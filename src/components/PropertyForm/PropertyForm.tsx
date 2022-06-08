@@ -40,6 +40,7 @@ const PropertyForm = (): JSX.Element => {
   const [formValues, setFormValues] = useState(initialFormValue);
 
   const { oneProperty } = useAppSelector((state) => state.oneProperty);
+
   useEffect(() => {
     if (oneProperty) {
       setFormValues(oneProperty);
