@@ -1,7 +1,7 @@
 const mockProperty = {
   typeOf: "House",
   adress: "Street 1",
-  name: "Can Subnormal",
+  name: "Can Pepito",
   surface: 150,
   price: 450000,
   bedrooms: 3,
