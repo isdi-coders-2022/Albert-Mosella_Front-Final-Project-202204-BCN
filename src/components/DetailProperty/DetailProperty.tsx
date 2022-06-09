@@ -35,15 +35,15 @@ const DetailProperty = () => {
         <ul className="property-icons">
           <li>
             <span>{oneProperty.bedrooms}</span>
-            <img src="images/dormitorio.png" alt="" />
+            <img src="/images/dormitorio.png" alt="" />
           </li>
           <li>
             <span>{oneProperty.bathrooms}</span>
-            <img src="images/baño.png" alt="" />
+            <img src="/images/baño.png" alt="" />
           </li>
           <li>
             <span>{oneProperty.surface}</span>
-            <img src="images/superficie.png" alt="" />
+            <img src="/images/superficie.png" alt="" />
           </li>
         </ul>
       </div>
@@ -51,64 +51,124 @@ const DetailProperty = () => {
       <div className="features">
         <ul>
           <li>
-            {oneProperty.views && (
-              <img src="images/icons8-check-64.png" alt="check-icon" />
+            {oneProperty.views ? (
+              <img src="/images/icons8-check-64.png" alt="check-icon" />
+            ) : (
+              <img
+                className="uncheck"
+                src="/images/icons8-uncheck-64.png"
+                alt="uncheck-icon"
+              />
             )}
             Views
           </li>
           <li>
-            {oneProperty.airConditioning && (
-              <img src="images/icons8-check-64.png" alt="check-icon" />
+            {oneProperty.airConditioning ? (
+              <img src="/images/icons8-check-64.png" alt="check-icon" />
+            ) : (
+              <img
+                className="uncheck"
+                src="/images/icons8-uncheck-64.png"
+                alt="uncheck-icon"
+              />
             )}
             Air Conditioning
           </li>
           <li>
-            {oneProperty.heating && (
-              <img src="images/icons8-check-64.png" alt="check-icon" />
+            {oneProperty.heating ? (
+              <img src="/images/icons8-check-64.png" alt="check-icon" />
+            ) : (
+              <img
+                className="uncheck"
+                src="/images/icons8-uncheck-64.png"
+                alt="uncheck-icon"
+              />
             )}
             Heating
           </li>
           <li>
-            {oneProperty.parking && (
-              <img src="images/icons8-check-64.png" alt="check-icon" />
+            {oneProperty.parking ? (
+              <img src="/images/icons8-check-64.png" alt="check-icon" />
+            ) : (
+              <img
+                className="uncheck"
+                src="/images/icons8-uncheck-64.png"
+                alt="uncheck-icon"
+              />
             )}
             Parking
           </li>
           <li>
-            {oneProperty.pool && (
-              <img src="images/icons8-check-64.png" alt="check-icon" />
+            {oneProperty.pool ? (
+              <img src="/images/icons8-check-64.png" alt="check-icon" />
+            ) : (
+              <img
+                className="uncheck"
+                src="/images/icons8-uncheck-64.png"
+                alt="uncheck-icon"
+              />
             )}
             Pool
           </li>
         </ul>
         <ul>
           <li>
-            {oneProperty.fireplace && (
-              <img src="images/icons8-check-64.png" alt="check-icon" />
+            {oneProperty.fireplace ? (
+              <img src="/images/icons8-check-64.png" alt="check-icon" />
+            ) : (
+              <img
+                className="uncheck"
+                src="/images/icons8-uncheck-64.png"
+                alt="uncheck-icon"
+              />
             )}
             Fireplace
           </li>
           <li>
-            {oneProperty.garden && (
-              <img src="images/icons8-check-64.png" alt="check-icon" />
+            {oneProperty.garden ? (
+              <img src="/images/icons8-check-64.png" alt="check-icon" />
+            ) : (
+              <img
+                className="uncheck"
+                src="/images/icons8-uncheck-64.png"
+                alt="uncheck-icon"
+              />
             )}
             Garden
           </li>
           <li>
-            {oneProperty.laundryRoom && (
-              <img src="images/icons8-check-64.png" alt="check-icon" />
+            {oneProperty.laundryRoom ? (
+              <img src="/images/icons8-check-64.png" alt="check-icon" />
+            ) : (
+              <img
+                className="uncheck"
+                src="/images/icons8-uncheck-64.png"
+                alt="uncheck-icon"
+              />
             )}
             Laundry Room
           </li>
           <li>
-            {oneProperty.storage && (
-              <img src="images/icons8-check-64.png" alt="check-icon" />
+            {oneProperty.storage ? (
+              <img src="/images/icons8-check-64.png" alt="check-icon" />
+            ) : (
+              <img
+                className="uncheck"
+                src="/images/icons8-uncheck-64.png"
+                alt="uncheck-icon"
+              />
             )}
             Storage
           </li>
           <li>
-            {oneProperty.terrace && (
-              <img src="images/icons8-check-64.png" alt="check-icon" />
+            {oneProperty.terrace ? (
+              <img src="/images/icons8-check-64.png" alt="check-icon" />
+            ) : (
+              <img
+                className="uncheck"
+                src="/images/icons8-uncheck-64.png"
+                alt="uncheck-icon"
+              />
             )}
             Terrace
           </li>
