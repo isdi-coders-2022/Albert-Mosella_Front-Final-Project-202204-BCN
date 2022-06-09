@@ -10,9 +10,12 @@ interface Props {
 const Property = (props: Props): JSX.Element => {
   const token = localStorage.getItem("token");
 
+  /* const url = "http://localhost:4000/"; */
+  const url = process.env.REACT_APP_API_URL;
+
   return (
     <PropertyContainer>
-      <img src={props.property.image} alt="una puta casa" />
+      <img src={`${url}${props.property.image}`} alt="una puta casa" />
       <div className="property-title">
         <h4>{props.property.name}</h4>
         {token && <Button id={props.property.id} />}

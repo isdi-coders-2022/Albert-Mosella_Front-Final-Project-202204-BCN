@@ -42,4 +42,10 @@ export const handlers = [
   rest.get(`${process.env.REACT_APP_API_URL}properties/`, (_, res, ctx) =>
     res(ctx.status(200), ctx.json(mockProperty))
   ),
+  rest.delete(
+    `${process.env.REACT_APP_API_URL}properties/:id`,
+    (req, res, ctx) => {
+      return res(ctx.status(200), ctx.json(mockProperty.id));
+    }
+  ),
 ];
