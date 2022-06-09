@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import DetailPage from "./pages/DetailPage/DetailPage";
 import EditPropertyPage from "./pages/EditPropertyPage/EditPropertyPage";
 import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
@@ -43,6 +44,7 @@ function App() {
         <Route path="/allproperties" element={<PropertiesPage />} />
         <Route path="/propertyform" element={<PropertyFormPage />} />
         <Route path="/editproperty/:id" element={<EditPropertyPage />} />
+        <Route path="/detailpage/:id" element={<DetailPage />} />
       </Routes>
       <Footer />
     </>
