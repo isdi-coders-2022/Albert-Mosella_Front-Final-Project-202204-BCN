@@ -5,14 +5,24 @@ import {
   deletePropertyActionCreator,
   loadAllPropertiesActionCreator,
 } from "../../features/propertySlice";
+import {
+  setLoadedOffActionCreator,
+  setLoadedOnActionCreator,
+} from "../../features/ui/uiSlice";
 import { AppDispatch } from "../../store/store";
 
 const url = process.env.REACT_APP_API_URL;
 
 export const loadPropertiesThunk = () => async (dispatch: AppDispatch) => {
-  const { data } = await axios.get(`${url}properties/`);
+  try {
+    dispatch(setLoadedOffActionCreator());
+    const { data } = await axios.get(`${url}properties/`);
 
-  dispatch(loadAllPropertiesActionCreator(data));
+    dispatch(loadAllPropertiesActionCreator(data));
+    setTimeout(() => {
+      dispatch(setLoadedOnActionCreator());
+    }, 3000);
+  } catch (error) {}
 };
 
 export const deletePropertyThunk =
