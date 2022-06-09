@@ -14,7 +14,10 @@ const Property = (props: Props): JSX.Element => {
 
   return (
     <PropertyContainer>
-      <img src={`${url}images/${props.property.image}`} alt="una puta casa" />
+      <img
+        src={`${url}images/${props.property.image}`}
+        alt="house perspective"
+      />
       <div className="property-title">
         <h4>{props.property.name}</h4>
         {token && <Button id={props.property.id} />}

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import DetailProperty from "../../components/DetailProperty/DetailProperty";
 import DetailPageContainer from "./DetailPageStyles";
 
 const DetailPage = (): JSX.Element => {
@@ -6,9 +6,7 @@ const DetailPage = (): JSX.Element => {
     <DetailPageContainer>
       <h2>Details</h2>
       <div className="decoration-line"></div>
-      <NavLink to={"/home"}>
-        <button className="long-button">Back to home</button>
-      </NavLink>
+      <DetailProperty />
     </DetailPageContainer>
   );
 };
