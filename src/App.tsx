@@ -6,6 +6,7 @@ import Header from "./components/Header/Header";
 import DetailPage from "./pages/DetailPage/DetailPage";
 import EditPropertyPage from "./pages/EditPropertyPage/EditPropertyPage";
 import HomePage from "./pages/HomePage/HomePage";
+import LoadingPage from "./pages/LoadingPage/LoadingPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import PropertiesPage from "./pages/PropertiesPage/PropertiesPage";
 import PropertyFormPage from "./pages/PropertyFormPage/PropertyFormPage";
@@ -18,6 +19,7 @@ import { User, UserInfo } from "./types/types";
 function App() {
   const dispatch = useAppDispatch();
   const { logged } = useAppSelector((state: { user: User }) => state.user);
+  const { loaded } = useAppSelector(({ ui }) => ui);
 
   const navigate = useNavigate();
 
@@ -38,10 +40,16 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route
+          path="/home"
+          element={!loaded ? <LoadingPage /> : <HomePage />}
+        />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/allproperties" element={<PropertiesPage />} />
+        <Route
+          path="/allproperties"
+          element={!loaded ? <LoadingPage /> : <PropertiesPage />}
+        />
         <Route path="/propertyform" element={<PropertyFormPage />} />
         <Route path="/editproperty/:id" element={<EditPropertyPage />} />
         <Route path="/detailpage/:id" element={<DetailPage />} />
