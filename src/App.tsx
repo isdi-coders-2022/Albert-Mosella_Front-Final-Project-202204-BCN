@@ -8,6 +8,7 @@ import EditPropertyPage from "./pages/EditPropertyPage/EditPropertyPage";
 import HomePage from "./pages/HomePage/HomePage";
 import LoadingPage from "./pages/LoadingPage/LoadingPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import PropertiesPage from "./pages/PropertiesPage/PropertiesPage";
 import PropertyFormPage from "./pages/PropertyFormPage/PropertyFormPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
@@ -53,6 +54,7 @@ function App() {
         <Route path="/propertyform" element={<PropertyFormPage />} />
         <Route path="/editproperty/:id" element={<EditPropertyPage />} />
         <Route path="/detailpage/:id" element={<DetailPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </>
