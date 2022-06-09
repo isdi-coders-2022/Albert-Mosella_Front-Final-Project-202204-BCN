@@ -12,18 +12,18 @@ const Footer = () => {
         altera occulta quaedam et voluptatem accusantium doloremque.
       </p>
       <div className="company-logo">
-        <img src="images/icons8-cebada-100.png" alt="cebada" />
+        <img src="/images/icons8-cebada-100.png" alt="cebada" />
         <h5>Rustik</h5>
       </div>
       <div className="social-media">
         <i className="insta icon">
-          <img src="images/instagram.png" alt="" />
+          <img src="/images/instagram.png" alt="" />
         </i>
         <i className="face icon">
-          <img src="images/facebook.png" alt="" />
+          <img src="/images/facebook.png" alt="" />
         </i>
         <i className="whatsapp icon">
-          <img src="images/whatsapp.png" alt="" />
+          <img src="/images/whatsapp.png" alt="" />
         </i>
       </div>
     </FooterContainer>

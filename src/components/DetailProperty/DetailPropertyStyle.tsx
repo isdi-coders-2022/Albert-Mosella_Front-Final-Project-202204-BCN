@@ -73,9 +73,22 @@ const DetailPropertyContainer = styled.div`
     display: flex;
     align-items: center;
     ul {
+      padding-left: 25px;
       li {
         list-style: none;
         text-align: left;
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 25px;
+          height: 25px;
+          padding-right: 5px;
+        }
+        .uncheck {
+          width: 23px;
+          height: 23px;
+        }
       }
     }
   }

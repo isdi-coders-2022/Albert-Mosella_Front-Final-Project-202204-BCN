@@ -6,6 +6,7 @@ const PropertyContainer = styled.div`
   border-radius: 25px;
   background-color: white;
   box-shadow: 0px 32px 34px rgba(0, 0, 0, 0.133714);
+  cursor: pointer;
 
   img {
     width: 336px;

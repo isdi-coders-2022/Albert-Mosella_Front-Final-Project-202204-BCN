@@ -20,7 +20,7 @@ const Header = () => {
         <nav>
           <ul>
             <li className="company-logo">
-              <img src="images/icons8-cebada-100.png" alt="cebada" />
+              <img src="/images/icons8-cebada-100.png" alt="cebada" />
               <NavLink to="/home">
                 <h1>Rustik</h1>
               </NavLink>
