@@ -7,6 +7,11 @@ const EditButtonContainer = styled.div`
     width: 50px;
     height: 50px;
     border-radius: 50px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: lightgreen;
   }
 `;
 
