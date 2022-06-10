@@ -12,8 +12,6 @@ const Property = (props: Props): JSX.Element => {
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
 
-  const url = process.env.REACT_APP_API_URL;
-
   const goToDetails = (): void => {
     navigate(`/detailpage/${props.property.id}`);
   };
@@ -21,10 +19,7 @@ const Property = (props: Props): JSX.Element => {
   return (
     <PropertyContainer>
       <div onClick={goToDetails}>
-        <img
-          src={`${url}images/${props.property.image}`}
-          alt="house perspective"
-        />
+        <img src={props.property.image} alt="house perspective" />
         <div className="property-title">
           <h4>{props.property.name}</h4>
           {token && <Button id={props.property.id} />}
