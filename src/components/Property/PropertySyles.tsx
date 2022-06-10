@@ -8,6 +8,11 @@ const PropertyContainer = styled.div`
   box-shadow: 0px 32px 34px rgba(0, 0, 0, 0.133714);
   cursor: pointer;
 
+  button {
+    position: relative;
+    z-index: 1;
+  }
+
   img {
     width: 336px;
     height: 266px;
