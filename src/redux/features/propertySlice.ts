@@ -22,6 +22,10 @@ const propertySlice = createSlice({
         (property: IProperty) => property.id !== action.payload
       ),
     }),
+    createProperty: (properties, action) => ({
+      ...properties,
+      allProperties: [...properties.allProperties, action.payload],
+    }),
   },
 });
 
@@ -30,4 +34,5 @@ export default propertySlice.reducer;
 export const {
   loadAllProperties: loadAllPropertiesActionCreator,
   deleteProperty: deletePropertyActionCreator,
+  createProperty: createPropertyActionCreator,
 } = propertySlice.actions;

@@ -2,6 +2,7 @@ import axios from "axios";
 import { IProperty } from "../../../types/types";
 import { loadOnePropertyActionCreator } from "../../features/onePropertySlice";
 import {
+  createPropertyActionCreator,
   deletePropertyActionCreator,
   loadAllPropertiesActionCreator,
 } from "../../features/propertySlice";
@@ -36,7 +37,12 @@ export const deletePropertyThunk =
 
 export const createPropertyThunk =
   (formData: IProperty) => async (dispatch: AppDispatch) => {
-    await axios.post(`${url}properties/`, formData);
+    const { data: newProperty } = await axios.post(
+      `${url}properties/`,
+      formData
+    );
+
+    dispatch(createPropertyActionCreator(newProperty));
   };
 
 export const getOnePorpertyThunk =
