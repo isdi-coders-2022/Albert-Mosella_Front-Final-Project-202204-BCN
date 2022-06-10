@@ -86,8 +86,9 @@ const DetailPropertyContainer = styled.div`
           padding-right: 5px;
         }
         .uncheck {
-          width: 23px;
-          height: 23px;
+          padding-left: 1px;
+          width: 22px;
+          height: 22px;
         }
       }
     }
