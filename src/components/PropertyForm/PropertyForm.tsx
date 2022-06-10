@@ -156,20 +156,19 @@ const PropertyForm = (): JSX.Element => {
             onChange={handleInputChange}
             autoComplete="off"
           />
-          <label htmlFor="description">Description</label>
-          <input
-            type="text"
-            id="description"
-            maxLength={260}
-            value={formValues.description}
-            onChange={handleInputChange}
-            autoComplete="off"
-          />
           <label htmlFor="image">Image</label>
           <input
             type="text"
             id="image"
             value={formValues.image}
+            onChange={handleInputChange}
+            autoComplete="off"
+          />
+          <label htmlFor="description">Description</label>
+          <textarea
+            id="description"
+            maxLength={260}
+            value={formValues.description}
             onChange={handleInputChange}
             autoComplete="off"
           />
