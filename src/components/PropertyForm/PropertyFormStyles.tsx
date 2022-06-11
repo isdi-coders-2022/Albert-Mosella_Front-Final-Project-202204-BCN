@@ -35,6 +35,26 @@ const PropertyFormStyle = styled.div`
     border: 2px solid #ebebeb;
   }
 
+  textarea {
+    height: 120px;
+    width: 80%;
+    margin-top: 10px;
+    font-family: inherit;
+    font-size: 0.9em;
+    border-radius: 10px;
+    border: 2px solid #ebebeb;
+  }
+
+  select {
+    height: 40px;
+    width: 80%;
+    margin-top: 10px;
+    font-family: inherit;
+    font-size: 0.9em;
+    border-radius: 10px;
+    border: 2px solid #ebebeb;
+  }
+
   .form-button {
     padding: 10px 45px;
     margin: 25px 0;
@@ -50,6 +70,8 @@ const PropertyFormStyle = styled.div`
 
   a {
     padding: 0 0 15px;
+    text-decoration: none;
+    color: black;
   }
 `;
 

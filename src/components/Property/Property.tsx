@@ -23,7 +23,6 @@ const Property = (props: Props): JSX.Element => {
         </div>
         <div className="property-title">
           <h4>{props.property.name}</h4>
-
           <span>{`${props.property.price}€`}</span>
         </div>
         <ul className="property-icons">

@@ -39,7 +39,8 @@ interface Props {
 const Button = ({ id }: Props): JSX.Element => {
   const dispatch = useAppDispatch();
 
-  const handleDelete = (): void => {
+  const handleDelete = (event: any): void => {
+    event.stopPropagation();
     dispatch(deletePropertyThunk(id));
   };
 

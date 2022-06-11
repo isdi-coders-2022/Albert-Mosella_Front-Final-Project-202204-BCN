@@ -110,6 +110,7 @@ const PropertyForm = (): JSX.Element => {
           <input
             type="number"
             maxLength={3}
+            min="0"
             id="surface"
             value={formValues.surface}
             onChange={handleInputChange}
@@ -119,6 +120,7 @@ const PropertyForm = (): JSX.Element => {
           <input
             type="number"
             maxLength={8}
+            min="0"
             id="price"
             value={formValues.price}
             onChange={handleInputChange}
@@ -128,6 +130,7 @@ const PropertyForm = (): JSX.Element => {
           <input
             type="number"
             maxLength={2}
+            min="0"
             id="bedrooms"
             value={formValues.bedrooms}
             onChange={handleInputChange}
@@ -137,6 +140,7 @@ const PropertyForm = (): JSX.Element => {
           <input
             type="number"
             maxLength={2}
+            min="0"
             id="bathrooms"
             value={formValues.bathrooms}
             onChange={handleInputChange}
@@ -146,16 +150,9 @@ const PropertyForm = (): JSX.Element => {
           <input
             type="number"
             maxLength={4}
+            min="0"
             id="year"
             value={formValues.year}
-            onChange={handleInputChange}
-            autoComplete="off"
-          />
-          <label htmlFor="description">Description</label>
-          <input
-            type="text"
-            id="description"
-            value={formValues.description}
             onChange={handleInputChange}
             autoComplete="off"
           />
@@ -164,6 +161,14 @@ const PropertyForm = (): JSX.Element => {
             type="text"
             id="image"
             value={formValues.image}
+            onChange={handleInputChange}
+            autoComplete="off"
+          />
+          <label htmlFor="description">Description</label>
+          <textarea
+            id="description"
+            maxLength={260}
+            value={formValues.description}
             onChange={handleInputChange}
             autoComplete="off"
           />

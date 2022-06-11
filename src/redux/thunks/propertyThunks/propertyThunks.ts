@@ -2,7 +2,12 @@ import axios from "axios";
 import { IProperty } from "../../../types/types";
 import { loadOnePropertyActionCreator } from "../../features/onePropertySlice";
 import {
+
   /* deletePropertyActionCreator, */
+
+  createPropertyActionCreator,
+  deletePropertyActionCreator,
+
   loadAllPropertiesActionCreator,
 } from "../../features/propertySlice";
 import {
@@ -27,8 +32,10 @@ export const loadPropertiesThunk = () => async (dispatch: AppDispatch) => {
 
 export const deletePropertyThunk =
   (id: string) => async (dispatch: AppDispatch) => {
-    /* const { status } = await axios.delete(`${url}properties/${id}`);
-
+    /* const token = localStorage.getItem("token");
+    const { status } = await axios.delete(`${url}properties/${id}`, {
+      headers: { authorization: `Bearer ${token}` },
+    });
     if (status === 200) {
       dispatch(deletePropertyActionCreator(id));
     } */
@@ -36,7 +43,16 @@ export const deletePropertyThunk =
 
 export const createPropertyThunk =
   (formData: IProperty) => async (dispatch: AppDispatch) => {
-    await axios.post(`${url}properties/`, formData);
+    const token = localStorage.getItem("token");
+    const { data: newProperty } = await axios.post(
+      `${url}properties/`,
+      formData,
+      {
+        headers: { authorization: `Bearer ${token}` },
+      }
+    );
+
+    dispatch(createPropertyActionCreator(newProperty));
   };
 
 export const getOnePorpertyThunk =
@@ -48,9 +64,12 @@ export const getOnePorpertyThunk =
 
 export const editPorpertyThunk =
   (id: string, propertyData: any) => async (dispatch: AppDispatch) => {
+    const token = localStorage.getItem("token");
     const {
       data: { updatedProperty },
-    } = await axios.put(`${url}properties/${id}`, propertyData);
+    } = await axios.put(`${url}properties/${id}`, propertyData, {
+      headers: { authorization: `Bearer ${token}` },
+    });
 
     if (updatedProperty) {
       dispatch(loadOnePropertyActionCreator(updatedProperty));

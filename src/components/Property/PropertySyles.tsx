@@ -9,6 +9,7 @@ const PropertyContainer = styled.div`
   box-shadow: 0px 32px 34px rgba(0, 0, 0, 0.133714);
   cursor: pointer;
 
+
   .image-container {
     width: 336px;
     height: 250px;
