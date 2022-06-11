@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import Filter from "../../components/Filter/Filter";
 import PropertiesList from "../../components/PropertiesList/PropertiesList";
 import { blankStateActionCreator } from "../../redux/features/onePropertySlice";
 import { useAppDispatch } from "../../redux/hooks";
@@ -23,6 +24,7 @@ const PropertiesPage = (): JSX.Element => {
           Add a new property
         </button>
       )}
+      <Filter />
       <PropertiesList />
     </PropertiesPageContainer>
   );
