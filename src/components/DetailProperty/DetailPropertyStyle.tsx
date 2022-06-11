@@ -6,7 +6,6 @@ const DetailPropertyContainer = styled.div`
 
     img {
       width: 369px;
-      height: 292px;
       border-radius: 0 70px 0 0;
     }
   }
@@ -89,6 +88,63 @@ const DetailPropertyContainer = styled.div`
           padding-left: 2px;
           width: 22px;
           height: 22px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 700px) {
+    .image-container {
+      padding: 25px 0;
+
+      img {
+        width: 680px;
+        border-radius: 0 70px 0 0;
+      }
+    }
+
+    .main-details {
+      width: 650px;
+
+      .property-title {
+        h4 {
+          font-size: 1.5em;
+        }
+      }
+      span {
+        font-size: 1.3em;
+      }
+    }
+    .description {
+      width: 650px;
+      font-size: 1.2em;
+    }
+    .features {
+      width: 650px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      ul {
+        font-size: 1.4em;
+        padding-right: 60px;
+        li {
+          list-style: none;
+          text-align: left;
+          display: flex;
+          align-items: center;
+
+          img {
+            width: 25px;
+            height: 25px;
+            padding-right: 5px;
+          }
+          .uncheck {
+            padding-left: 2px;
+            width: 22px;
+            height: 22px;
+          }
         }
       }
     }

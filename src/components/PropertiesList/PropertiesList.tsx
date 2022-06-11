@@ -21,8 +21,21 @@ const PropertiesListContainer = styled.div`
   @media (min-width: 700px) {
     ul {
       display: grid;
+      grid-template-columns: repeat(2, 350px);
+      grid-template-rows: repeat(3, 500px);
+      grid-gap: 2px 1px;
+
+      li {
+        margin: 0 10px;
+      }
+    }
+  }
+
+  @media (min-width: 1000px) {
+    ul {
+      display: grid;
       grid-template-columns: repeat(3, 350px);
-      grid-template-rows: repeat(4, 500px);
+      grid-template-rows: repeat(2, 500px);
       grid-gap: 2px 1px;
 
       li {
