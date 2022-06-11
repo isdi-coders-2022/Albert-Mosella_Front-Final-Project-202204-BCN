@@ -14,7 +14,7 @@ const HomePage = (): JSX.Element => {
       </p>
       <button className="long-button">Learn more</button>
       <img
-        src="images/casa-home.jpg"
+        src="images/casa-portada.jpg"
         alt="casa-japonesa"
         className="photo-home"
       />
