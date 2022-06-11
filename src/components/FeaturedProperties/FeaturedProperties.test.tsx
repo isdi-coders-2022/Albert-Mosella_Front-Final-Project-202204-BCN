@@ -12,7 +12,7 @@ describe("Given the Property component", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <PropertiesList />
+            <PropertiesList allProperties={[]} />
           </BrowserRouter>
         </Provider>
       );
