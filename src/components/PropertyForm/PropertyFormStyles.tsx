@@ -26,6 +26,7 @@ const PropertyFormStyle = styled.div`
   }
 
   input {
+    padding-left: 10px;
     height: 40px;
     width: 80%;
     margin-top: 10px;
@@ -72,6 +73,38 @@ const PropertyFormStyle = styled.div`
     padding: 0 0 15px;
     text-decoration: none;
     color: black;
+  }
+
+  .checkbox-container {
+    padding: 30px 0;
+    .checkbox {
+      display: flex;
+
+      input {
+        width: 50px;
+      }
+    }
+  }
+
+  @media (min-width: 700px) {
+    form {
+      width: 50%;
+
+      .checkbox-container {
+        display: flex;
+
+        .checkbox-container-col {
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 850px) {
+    .checkbox-container {
+      display: flex;
+      flex-direction: column;
+    }
   }
 `;
 
