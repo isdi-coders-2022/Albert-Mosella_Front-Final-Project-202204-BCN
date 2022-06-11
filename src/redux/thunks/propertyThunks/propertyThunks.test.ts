@@ -1,11 +1,11 @@
 import {
-  deletePropertyThunk,
+  /* deletePropertyThunk, */
   getOnePorpertyThunk,
   loadPropertiesThunk,
 } from "./propertyThunks";
 import { server } from "../mocks/server/server";
 import {
-  deletePropertyActionCreator,
+  /* deletePropertyActionCreator, */
   loadAllPropertiesActionCreator,
 } from "../../features/propertySlice";
 import { loadOnePropertyActionCreator } from "../../features/onePropertySlice";
@@ -75,7 +75,7 @@ describe("Given a getOnePorpertyThunk function", () => {
   });
 });
 
-describe("Given a deletePropertyThunk function", () => {
+/* describe("Given a deletePropertyThunk function", () => {
   describe("When it's called", () => {
     test("Then it should dispatch the deletePropertyActionCreator", async () => {
       const dispatch = jest.fn();
@@ -87,4 +87,4 @@ describe("Given a deletePropertyThunk function", () => {
       expect(dispatch).toHaveBeenCalledWith(deleteAction);
     });
   });
-});
+}); */

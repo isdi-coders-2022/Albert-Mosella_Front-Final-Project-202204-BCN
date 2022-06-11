@@ -25,7 +25,6 @@ const DetailProperty = () => {
       <div className="main-details">
         <div className="property-title">
           <h4>{oneProperty.name}</h4>
-          {token && <EditButton id={oneProperty.id} />}
           <span>{`${oneProperty.price}€`}</span>
         </div>
         <ul className="property-icons">
@@ -170,6 +169,7 @@ const DetailProperty = () => {
           </li>
         </ul>
       </div>
+      {token && <EditButton id={oneProperty.id} />}
     </DetailPropertyContainer>
   );
 };

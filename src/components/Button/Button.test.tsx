@@ -15,8 +15,8 @@ jest.mock("../../redux/hooks", () => ({
 describe("Given a Button Component", () => {
   const id = "Hola";
   describe("When it's invoked", () => {
-    test("Then it should render the text 'X'", () => {
-      const expectedResult: string = "X";
+    test("Then it should render the text 'Delete'", () => {
+      const expectedResult: string = "Delete";
 
       render(
         <Provider store={store}>

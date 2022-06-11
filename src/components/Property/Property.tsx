@@ -18,11 +18,12 @@ const Property = (props: Props): JSX.Element => {
   return (
     <PropertyContainer>
       <div onClick={goToDetails}>
-        <img src={props.property.image} alt="house perspective" />
+        <div className="image-container">
+          <img src={props.property.image} alt="house perspective" />
+        </div>
         <div className="property-title">
           <h4>{props.property.name}</h4>
-          {token && <Button id={props.property.id} />}
-          <span>{props.property.price}</span>
+          <span>{`${props.property.price}€`}</span>
         </div>
         <ul className="property-icons">
           <li>
@@ -39,6 +40,7 @@ const Property = (props: Props): JSX.Element => {
           </li>
         </ul>
       </div>
+      {token && <Button id={props.property.id} />}
     </PropertyContainer>
   );
 };
