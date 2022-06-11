@@ -29,6 +29,10 @@ const EditButtonContainer = styled.div`
     background: green;
     color: white;
   }
+
+  @media (min-width: 700px) {
+    width: 680px;
+  }
 `;
 
 interface Props {

@@ -54,6 +54,12 @@ const RegisterFormStyle = styled.div`
     color: black;
     cursor: pointer;
   }
+
+  @media (min-width: 700px) {
+    form {
+      width: 50%;
+    }
+  }
 `;
 
 export default RegisterFormStyle;

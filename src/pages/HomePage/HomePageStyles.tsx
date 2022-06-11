@@ -42,8 +42,8 @@ const HomePageContainer = styled.div`
   }
 
   .photo-home {
-    margin-top: 10px;
     width: 100%;
+    margin-bottom: 30px;
   }
 `;
 
