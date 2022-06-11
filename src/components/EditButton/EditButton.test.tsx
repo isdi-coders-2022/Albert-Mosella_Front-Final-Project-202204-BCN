@@ -15,8 +15,8 @@ jest.mock("react-router-dom", () => ({
 describe("Given a EditButton Component", () => {
   const id = "Hola";
   describe("When it's invoked", () => {
-    test("Then it should render the text 'E'", () => {
-      const expectedResult: string = "E";
+    test("Then it should render the text 'Edit'", () => {
+      const expectedResult: string = "Edit";
 
       render(
         <Provider store={store}>

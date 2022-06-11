@@ -15,21 +15,16 @@ const DetailProperty = () => {
     dispatch(getOnePorpertyThunk(id as string));
   }, [dispatch, id]);
 
-  const url = process.env.REACT_APP_API_URL;
   const { oneProperty } = useAppSelector((state) => state.oneProperty);
 
   return (
     <DetailPropertyContainer>
       <div className="image-container">
-        <img
-          src={`${url}images/${oneProperty.image}`}
-          alt="house perspective"
-        />
+        <img src={oneProperty.image} alt="house perspective" />
       </div>
       <div className="main-details">
         <div className="property-title">
           <h4>{oneProperty.name}</h4>
-          {token && <EditButton id={oneProperty.id} />}
           <span>{`${oneProperty.price}€`}</span>
         </div>
         <ul className="property-icons">
@@ -174,6 +169,7 @@ const DetailProperty = () => {
           </li>
         </ul>
       </div>
+      {token && <EditButton id={oneProperty.id} />}
     </DetailPropertyContainer>
   );
 };

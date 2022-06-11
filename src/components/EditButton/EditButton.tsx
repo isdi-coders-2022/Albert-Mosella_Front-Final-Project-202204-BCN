@@ -2,16 +2,32 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const EditButtonContainer = styled.div`
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 369px;
+  height: 50px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 25px;
+  box-shadow: 0px 32px 34px rgba(0, 0, 0, 0.133714);
+  overflow: hidden;
+  margin-bottom: 50px;
+
   button {
+    width: 100%;
+    height: 100%;
     background: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
     cursor: pointer;
+    margin: 0px;
+    border: none;
+    font-size: 1.5em;
+    font-family: "Abel", sans-serif;
   }
 
   button:hover {
-    background: lightgreen;
+    background: green;
+    color: white;
   }
 `;
 
@@ -28,7 +44,7 @@ const EditButton = ({ id }: Props): JSX.Element => {
 
   return (
     <EditButtonContainer>
-      <button onClick={handleEdit}>E</button>
+      <button onClick={handleEdit}>Edit</button>
     </EditButtonContainer>
   );
 };

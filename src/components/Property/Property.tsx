@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { IProperty } from "../../types/types";
 import Button from "../Button/Button";
-import EditButton from "../EditButton/EditButton";
 import PropertyContainer from "./PropertySyles";
 
 interface Props {
@@ -12,8 +11,6 @@ const Property = (props: Props): JSX.Element => {
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
 
-  const url = process.env.REACT_APP_API_URL;
-
   const goToDetails = (): void => {
     navigate(`/detailpage/${props.property.id}`);
   };
@@ -21,15 +18,13 @@ const Property = (props: Props): JSX.Element => {
   return (
     <PropertyContainer>
       <div onClick={goToDetails}>
-        <img
-          src={`${url}images/${props.property.image}`}
-          alt="house perspective"
-        />
+        <div className="image-container">
+          <img src={props.property.image} alt="house perspective" />
+        </div>
         <div className="property-title">
           <h4>{props.property.name}</h4>
-          {token && <Button id={props.property.id} />}
-          {token && <EditButton id={props.property.id} />}
-          <span>{props.property.price}</span>
+
+          <span>{`${props.property.price}€`}</span>
         </div>
         <ul className="property-icons">
           <li>
@@ -46,6 +41,7 @@ const Property = (props: Props): JSX.Element => {
           </li>
         </ul>
       </div>
+      {token && <Button id={props.property.id} />}
     </PropertyContainer>
   );
 };
