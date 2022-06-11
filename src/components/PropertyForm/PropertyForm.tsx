@@ -172,76 +172,102 @@ const PropertyForm = (): JSX.Element => {
             onChange={handleInputChange}
             autoComplete="off"
           />
-          <label htmlFor="views">Views</label>
-          <input
-            type="checkbox"
-            id="views"
-            checked={formValues.views}
-            onChange={handleCheckboxChange}
-          />
-          <label htmlFor="airConditioning">Air Conditioning</label>
-          <input
-            type="checkbox"
-            id="airConditioning"
-            checked={formValues.airConditioning}
-            onChange={handleCheckboxChange}
-          />
-          <label htmlFor="heating">Heating</label>
-          <input
-            type="checkbox"
-            id="heating"
-            checked={formValues.heating}
-            onChange={handleCheckboxChange}
-          />
-          <label htmlFor="parking">Parking</label>
-          <input
-            type="checkbox"
-            id="parking"
-            checked={formValues.parking}
-            onChange={handleCheckboxChange}
-          />
-          <label htmlFor="pool">Pool</label>
-          <input
-            type="checkbox"
-            id="pool"
-            checked={formValues.pool}
-            onChange={handleCheckboxChange}
-          />
-          <label htmlFor="fireplace">Fireplace</label>
-          <input
-            type="checkbox"
-            id="fireplace"
-            checked={formValues.fireplace}
-            onChange={handleCheckboxChange}
-          />
-          <label htmlFor="garden">Garden</label>
-          <input
-            type="checkbox"
-            id="garden"
-            checked={formValues.garden}
-            onChange={handleCheckboxChange}
-          />
-          <label htmlFor="laundryRoom">Laundry Room</label>
-          <input
-            type="checkbox"
-            id="laundryRoom"
-            checked={formValues.laundryRoom}
-            onChange={handleCheckboxChange}
-          />
-          <label htmlFor="storage">Storage</label>
-          <input
-            type="checkbox"
-            id="storage"
-            checked={formValues.storage}
-            onChange={handleCheckboxChange}
-          />
-          <label htmlFor="terrace">Terrace</label>
-          <input
-            type="checkbox"
-            id="terrace"
-            checked={formValues.terrace}
-            onChange={handleCheckboxChange}
-          />
+          <div className="checkbox-container">
+            <div className="checkbox-container-col">
+              <div className="checkbox">
+                <input
+                  type="checkbox"
+                  id="views"
+                  checked={formValues.views}
+                  onChange={handleCheckboxChange}
+                />
+                <label htmlFor="views">Views</label>
+              </div>
+              <div className="checkbox">
+                <input
+                  type="checkbox"
+                  id="airConditioning"
+                  checked={formValues.airConditioning}
+                  onChange={handleCheckboxChange}
+                />
+                <label htmlFor="airConditioning">Air Conditioning</label>
+              </div>
+              <div className="checkbox">
+                <input
+                  type="checkbox"
+                  id="heating"
+                  checked={formValues.heating}
+                  onChange={handleCheckboxChange}
+                />
+                <label htmlFor="heating">Heating</label>
+              </div>
+              <div className="checkbox">
+                <input
+                  type="checkbox"
+                  id="parking"
+                  checked={formValues.parking}
+                  onChange={handleCheckboxChange}
+                />
+                <label htmlFor="parking">Parking</label>
+              </div>
+              <div className="checkbox">
+                <input
+                  type="checkbox"
+                  id="pool"
+                  checked={formValues.pool}
+                  onChange={handleCheckboxChange}
+                />
+                <label htmlFor="pool">Pool</label>
+              </div>
+            </div>
+            <div className="checkbox-container-col">
+              <div className="checkbox">
+                <input
+                  type="checkbox"
+                  id="fireplace"
+                  checked={formValues.fireplace}
+                  onChange={handleCheckboxChange}
+                />
+                <label htmlFor="fireplace">Fireplace</label>
+              </div>
+              <div className="checkbox">
+                <input
+                  type="checkbox"
+                  id="garden"
+                  checked={formValues.garden}
+                  onChange={handleCheckboxChange}
+                />
+                <label htmlFor="garden">Garden</label>
+              </div>
+              <div className="checkbox">
+                <input
+                  type="checkbox"
+                  id="laundryRoom"
+                  checked={formValues.laundryRoom}
+                  onChange={handleCheckboxChange}
+                />
+                <label htmlFor="laundryRoom">Laundry Room</label>
+              </div>
+              <div className="checkbox">
+                <input
+                  type="checkbox"
+                  id="storage"
+                  checked={formValues.storage}
+                  onChange={handleCheckboxChange}
+                />
+                <label htmlFor="storage">Storage</label>
+              </div>
+              <div className="checkbox">
+                <input
+                  type="checkbox"
+                  id="terrace"
+                  checked={formValues.terrace}
+                  onChange={handleCheckboxChange}
+                />
+                <label htmlFor="terrace">Terrace</label>
+              </div>
+            </div>
+          </div>
           <button
             className="form-button"
             type="submit"
