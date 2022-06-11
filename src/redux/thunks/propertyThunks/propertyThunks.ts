@@ -2,12 +2,8 @@ import axios from "axios";
 import { IProperty } from "../../../types/types";
 import { loadOnePropertyActionCreator } from "../../features/onePropertySlice";
 import {
-
   /* deletePropertyActionCreator, */
-
   createPropertyActionCreator,
-  deletePropertyActionCreator,
-
   loadAllPropertiesActionCreator,
 } from "../../features/propertySlice";
 import {
