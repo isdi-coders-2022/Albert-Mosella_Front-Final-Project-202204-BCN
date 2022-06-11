@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { useAppSelector } from "../../redux/hooks";
 import { IProperty } from "../../types/types";
 import Property from "../Property/Property";
 
 const PropertiesListContainer = styled.div`
   background: #f5f5f5;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -45,15 +45,15 @@ const PropertiesListContainer = styled.div`
   }
 `;
 
-const PropertiesList = (): JSX.Element => {
-  const allProperties: IProperty[] = useAppSelector(
-    (state) => state.properties.allProperties
-  );
+interface Props {
+  allProperties: IProperty[];
+}
 
+const PropertiesList = (props: Props): JSX.Element => {
   return (
     <PropertiesListContainer>
       <ul>
-        {allProperties.map((property: IProperty) => (
+        {props.allProperties.map((property: IProperty) => (
           <li key={property.name}>
             <Property property={property} />
           </li>

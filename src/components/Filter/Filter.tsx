@@ -1,56 +1,8 @@
-import { useState } from "react";
-import styled from "styled-components";
-
-const FilterContainer = styled.div`
-  margin: 20px 0;
-  width: 200px;
-  height: 40px;
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-
-  .filter-options-container {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-
-    .filter-options {
-      display: flex;
-      justify-content: center;
-      text-align: center;
-      padding: 10px;
-      z-index: 10;
-      margin-top: 4px;
-      height: 40px;
-      cursor: pointer;
-    }
-  }
-  .filter-options-container--hidden {
-    z-index: -10;
-    display: none;
-  }
-  button {
-    background-color: white;
-    color: black;
-    border-radius: 0px;
-    display: flex;
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
-
-    justify-content: space-around;
-
-    span {
-      padding-top: 6px;
-      font-size: 1.3em;
-    }
-
-    img {
-      width: 20px;
-      padding-top: 5px;
-    }
-  }
-`;
+import { useEffect, useState } from "react";
+import { useAppSelector } from "../../redux/hooks";
+import { IProperty } from "../../types/types";
+import PropertiesList from "../PropertiesList/PropertiesList";
+import FilterContainer from "./FilterStyles";
 
 const Filter = () => {
   const [dropdownPriceOptionsStatus, setDropdownPriceOptionsStatus] =
@@ -62,27 +14,93 @@ const Filter = () => {
       : setDropdownPriceOptionsStatus(true);
   };
 
+  const allProperties: IProperty[] = useAppSelector(
+    (state) => state.properties.allProperties
+  );
+
+  const initialState: IProperty[] = [];
+
+  const [filterProperties, setFilterProperties] = useState(initialState);
+
+  useEffect(() => {
+    setFilterProperties(allProperties);
+  }, [allProperties]);
+
+  const filterByPrice = (option: number) => {
+    let filteredByPriceProperties = [];
+    switch (option) {
+      case 0:
+        filteredByPriceProperties = allProperties;
+        break;
+      case 1:
+        filteredByPriceProperties = allProperties.filter(
+          (property) => property.price < 200000
+        );
+        break;
+      case 2:
+        filteredByPriceProperties = allProperties.filter(
+          (property) => property.price < 400000
+        );
+        break;
+      case 3:
+        filteredByPriceProperties = allProperties.filter(
+          (property) => property.price < 600000
+        );
+        break;
+      case 4:
+        filteredByPriceProperties = allProperties.filter(
+          (property) => property.price < 800000
+        );
+        break;
+      case 5:
+        filteredByPriceProperties = allProperties.filter(
+          (property) => property.price < 1000000
+        );
+        break;
+      default:
+        filteredByPriceProperties = allProperties;
+    }
+    setFilterProperties(filteredByPriceProperties);
+
+    return filterProperties;
+  };
+
   return (
-    <FilterContainer>
-      <button onClick={deployPriceOptions}>
-        <span>Filter by price</span>
-        <img src="/images/icons8-doble-abajo-30.png" alt="" />
-      </button>
-      <div
-        className={
-          dropdownPriceOptionsStatus
-            ? "filter-options-container"
-            : "filter-options-container--hidden"
-        }
-      >
-        <button className="filter-options">Option1</button>
-        <button className="filter-options">Option2</button>
-        <button className="filter-options">Option3</button>
-        <button className="filter-options">Option5</button>
-        <button className="filter-options">Option6</button>
-        <button className="filter-options">Option7</button>
-      </div>
-    </FilterContainer>
+    <>
+      <FilterContainer>
+        <button onClick={deployPriceOptions}>
+          <span>Filter by price</span>
+          <img src="/images/icons8-doble-abajo-30.png" alt="" />
+        </button>
+        <div
+          className={
+            dropdownPriceOptionsStatus
+              ? "filter-options-container"
+              : "filter-options-container--hidden"
+          }
+        >
+          <button onClick={() => filterByPrice(0)} className="filter-options">
+            Show All
+          </button>
+          <button onClick={() => filterByPrice(1)} className="filter-options">
+            Under 200.000€
+          </button>
+          <button onClick={() => filterByPrice(2)} className="filter-options">
+            Under 400.000€
+          </button>
+          <button onClick={() => filterByPrice(3)} className="filter-options">
+            Under 600.000€
+          </button>
+          <button onClick={() => filterByPrice(4)} className="filter-options">
+            Under 800.000€
+          </button>
+          <button onClick={() => filterByPrice(5)} className="filter-options">
+            Under 1.000.000€
+          </button>
+        </div>
+      </FilterContainer>
+      <PropertiesList allProperties={filterProperties} />
+    </>
   );
 };
 
