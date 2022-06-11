@@ -1,4 +1,4 @@
-import PropertiesList from "../../components/PropertiesList/PropertiesList";
+import FeaturedProperties from "../../components/FeaturedProperties/FeaturedProperties";
 import HomePageContainer from "./HomePageStyles";
 
 const HomePage = (): JSX.Element => {
@@ -15,13 +15,13 @@ const HomePage = (): JSX.Element => {
       <button className="long-button">Learn more</button>
       <img
         src="images/casa-portada.jpg"
-        alt="casa-japonesa"
+        alt="rustik-house"
         className="photo-home"
       />
       <h3>Find your next place to live</h3>
       <div className="decoration-line"></div>
       <h3>Featured</h3>
-      <PropertiesList />
+      <FeaturedProperties />
     </HomePageContainer>
   );
 };

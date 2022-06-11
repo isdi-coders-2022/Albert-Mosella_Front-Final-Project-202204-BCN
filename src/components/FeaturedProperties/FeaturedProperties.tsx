@@ -3,7 +3,7 @@ import { useAppSelector } from "../../redux/hooks";
 import { IProperty } from "../../types/types";
 import Property from "../Property/Property";
 
-const PropertiesListContainer = styled.div`
+const FeaturedPropertiesContainer = styled.div`
   background: #f5f5f5;
   display: flex;
   justify-content: center;
@@ -17,12 +17,11 @@ const PropertiesListContainer = styled.div`
     list-style: none;
     margin-bottom: 40px;
   }
-
   @media (min-width: 700px) {
     ul {
       display: grid;
       grid-template-columns: repeat(3, 350px);
-      grid-template-rows: repeat(4, 500px);
+      grid-template-rows: repeat(2, 500px);
       grid-gap: 2px 1px;
 
       li {
@@ -32,22 +31,22 @@ const PropertiesListContainer = styled.div`
   }
 `;
 
-const PropertiesList = (): JSX.Element => {
+const FeaturedProperties = (): JSX.Element => {
   const allProperties: IProperty[] = useAppSelector(
     (state) => state.properties.allProperties
   );
 
   return (
-    <PropertiesListContainer>
+    <FeaturedPropertiesContainer>
       <ul>
-        {allProperties.map((property: IProperty) => (
+        {allProperties.slice(0, 6).map((property: IProperty) => (
           <li key={property.name}>
             <Property property={property} />
           </li>
         ))}
       </ul>
-    </PropertiesListContainer>
+    </FeaturedPropertiesContainer>
   );
 };
 
-export default PropertiesList;
+export default FeaturedProperties;

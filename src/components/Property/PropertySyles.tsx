@@ -1,23 +1,22 @@
 import styled from "styled-components";
 
 const PropertyContainer = styled.div`
-  width: 336px;
+  width: 315px;
   height: 418px;
   border-radius: 25px;
-  margin-bottom: 130px;
+  margin-bottom: 65px;
   background-color: white;
   box-shadow: 0px 32px 34px rgba(0, 0, 0, 0.133714);
   cursor: pointer;
 
-
   .image-container {
-    width: 336px;
+    width: 315px;
     height: 250px;
     border-radius: 25px 25px 0 0;
     overflow: hidden;
 
     img {
-      width: 100%;
+      height: 240px;
       top: 50%;
       left: 50%;
     }
