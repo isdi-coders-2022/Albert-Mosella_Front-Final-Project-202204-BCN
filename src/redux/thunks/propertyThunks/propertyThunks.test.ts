@@ -1,11 +1,13 @@
 import {
-  /* deletePropertyThunk, */
+  createPropertyThunk,
+  deletePropertyThunk,
   getOnePorpertyThunk,
   loadPropertiesThunk,
 } from "./propertyThunks";
 import { server } from "../mocks/server/server";
 import {
-  /* deletePropertyActionCreator, */
+  createPropertyActionCreator,
+  deletePropertyActionCreator,
   loadAllPropertiesActionCreator,
 } from "../../features/propertySlice";
 import { loadOnePropertyActionCreator } from "../../features/onePropertySlice";
@@ -75,7 +77,7 @@ describe("Given a getOnePorpertyThunk function", () => {
   });
 });
 
-/* describe("Given a deletePropertyThunk function", () => {
+describe("Given a deletePropertyThunk function", () => {
   describe("When it's called", () => {
     test("Then it should dispatch the deletePropertyActionCreator", async () => {
       const dispatch = jest.fn();
@@ -87,4 +89,24 @@ describe("Given a getOnePorpertyThunk function", () => {
       expect(dispatch).toHaveBeenCalledWith(deleteAction);
     });
   });
-}); */
+});
+
+describe("Given the createPropertyThunk thunk", () => {
+  describe("When it receives a property and data from response api", () => {
+    test("Then it should call dispatch with createPropertyActionCreator", async () => {
+      const newPost = mockProperty;
+      const mockAxiosReturn = {
+        status: 201,
+        data: mockProperty,
+      };
+      const dispatch = jest.fn();
+      const createPropertyThunkTest = createPropertyThunk(newPost);
+      const expectedAction = createPropertyActionCreator(newPost);
+      axios.post = jest.fn().mockResolvedValue(mockAxiosReturn);
+
+      await createPropertyThunkTest(dispatch);
+
+      expect(dispatch).toHaveBeenNthCalledWith(1, expectedAction);
+    });
+  });
+});
