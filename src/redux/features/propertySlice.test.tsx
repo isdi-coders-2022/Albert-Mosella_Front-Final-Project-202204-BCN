@@ -1,5 +1,7 @@
+import mockProperty from "../../mocks/mockProperty";
 import { mockProperties } from "../thunks/mocks/handlers/handlers";
 import propertyReducer, {
+  createPropertyActionCreator,
   deletePropertyActionCreator,
   loadAllPropertiesActionCreator,
 } from "./propertySlice";
@@ -40,6 +42,24 @@ describe("Given the deletePropertyActionCreator", () => {
       const loadedState = propertyReducer(initialState, action);
 
       expect(loadedState).toEqual(expectedState);
+    });
+  });
+});
+
+describe("Given a createProperty reducer", () => {
+  describe("When it receives an action to create a new property", () => {
+    test("Then it should create a new property", () => {
+      const initialState = {
+        allProperties: mockProperties,
+      };
+      const createAction = createPropertyActionCreator(mockProperty);
+
+      const expectedState = {
+        allProperties: [...mockProperties, mockProperty],
+      };
+
+      const propertyStatus = propertyReducer(initialState, createAction);
+      expect(propertyStatus).toEqual(expectedState);
     });
   });
 });
