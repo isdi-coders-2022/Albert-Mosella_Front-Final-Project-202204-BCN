@@ -36,6 +36,8 @@ const FilterPriceContainer = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 25px;
+    border: none;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.133714);
 
     justify-content: space-around;
 
