@@ -48,4 +48,7 @@ export const handlers = [
       return res(ctx.status(200), ctx.json(mockProperty.id));
     }
   ),
+  rest.post(`${process.env.REACT_APP_API_URL}properties/`, (_, res, ctx) => {
+    return res(ctx.status(201), ctx.json(mockProperty));
+  }),
 ];
