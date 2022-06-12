@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Filter from "../../components/Filter/Filter";
-
+import FilterPrice from "../../components/FilterPrice/FilterPrice";
 import { blankStateActionCreator } from "../../redux/features/onePropertySlice";
 import { useAppDispatch } from "../../redux/hooks";
 import PropertiesPageContainer from "./PropertiesPageStyles";
@@ -24,7 +23,7 @@ const PropertiesPage = (): JSX.Element => {
           Add a new property
         </button>
       )}
-      <Filter />
+      <FilterPrice />
     </PropertiesPageContainer>
   );
 };

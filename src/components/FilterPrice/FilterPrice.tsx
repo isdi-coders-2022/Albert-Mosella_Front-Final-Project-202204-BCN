@@ -3,9 +3,9 @@ import { useAppSelector } from "../../redux/hooks";
 import { IProperty } from "../../types/types";
 import FilterButton from "../FilterButton/FilterButton";
 import PropertiesList from "../PropertiesList/PropertiesList";
-import FilterContainer from "./FilterStyles";
+import FilterPriceContainer from "./FilterPriceStyles";
 
-const Filter = () => {
+const FilterPrice = () => {
   const [dropdownPriceOptionsStatus, setDropdownPriceOptionsStatus] =
     useState(false);
 
@@ -66,7 +66,7 @@ const Filter = () => {
 
   return (
     <>
-      <FilterContainer>
+      <FilterPriceContainer>
         <button onClick={deployPriceOptions}>
           <span>Filter by price</span>
           <img src="/images/icons8-doble-abajo-30.png" alt="" />
@@ -100,10 +100,10 @@ const Filter = () => {
             action={() => filterOption(1000000)}
           />
         </div>
-      </FilterContainer>
+      </FilterPriceContainer>
       <PropertiesList allProperties={filterProperties} />
     </>
   );
 };
 
-export default Filter;
+export default FilterPrice;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const FilterContainer = styled.div`
+const FilterPriceContainer = styled.div`
   margin: 20px 0;
   width: 200px;
   height: 40px;
@@ -51,4 +51,4 @@ const FilterContainer = styled.div`
   }
 `;
 
-export default FilterContainer;
+export default FilterPriceContainer;
