@@ -116,4 +116,20 @@ describe("Given the PropertyForm component", () => {
       expect(screen.getByLabelText(labelTextImage)).toHaveValue("");
     });
   });
+
+  describe("When the checkboxes are clicked", () => {
+    test("Then the value of the checkboxes should be true", () => {
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <PropertyForm />
+          </BrowserRouter>
+        </Provider>
+      );
+
+      userEvent.click(screen.getByLabelText("Views"));
+
+      expect(screen.getByLabelText("Views")).toBeChecked();
+    });
+  });
 });

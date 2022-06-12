@@ -54,7 +54,7 @@ const FeaturedProperties = (): JSX.Element => {
     <FeaturedPropertiesContainer>
       <ul>
         {allProperties.slice(0, 6).map((property: IProperty) => (
-          <li key={property.name}>
+          <li key={property.id}>
             <Property property={property} />
           </li>
         ))}

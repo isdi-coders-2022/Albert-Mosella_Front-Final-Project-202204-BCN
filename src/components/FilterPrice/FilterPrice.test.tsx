@@ -1,24 +1,23 @@
 import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import { mockList } from "../../mocks/mockProperty";
 import store from "../../redux/store/store";
-import PropertiesList from "../PropertiesList/PropertiesList";
+import FilterPrice from "./FilterPrice";
 
-describe("Given the Property component", () => {
+describe("Given the FilterPrice component", () => {
   describe("When it's invoked", () => {
-    test("Then it should render two list element", () => {
+    test("Then it should render 3 button elements", () => {
       const expectedLenght = 3;
 
       render(
         <Provider store={store}>
           <BrowserRouter>
-            <PropertiesList allProperties={mockList} />
+            <FilterPrice />
           </BrowserRouter>
         </Provider>
       );
 
-      const result = screen.getAllByRole("list");
+      const result = screen.getAllByRole("button");
 
       expect(result).toHaveLength(expectedLenght);
     });
