@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAppSelector } from "../../redux/hooks";
 import { IProperty } from "../../types/types";
+import FilterButton from "../FilterButton/FilterButton";
 import PropertiesList from "../PropertiesList/PropertiesList";
 import FilterContainer from "./FilterStyles";
 
@@ -77,39 +78,27 @@ const Filter = () => {
               : "filter-options-container--hidden"
           }
         >
-          <button onClick={() => filterOption(0)} className="filter-options">
-            Show All
-          </button>
-          <button
-            onClick={() => filterOption(200000)}
-            className="filter-options"
-          >
-            Under 200.000€
-          </button>
-          <button
-            onClick={() => filterOption(400000)}
-            className="filter-options"
-          >
-            Under 400.000€
-          </button>
-          <button
-            onClick={() => filterOption(600000)}
-            className="filter-options"
-          >
-            Under 600.000€
-          </button>
-          <button
-            onClick={() => filterOption(800000)}
-            className="filter-options"
-          >
-            Under 800.000€
-          </button>
-          <button
-            onClick={() => filterOption(1000000)}
-            className="filter-options"
-          >
-            Under 1.000.000€
-          </button>
+          <FilterButton text="Show All" action={() => filterOption(0)} />
+          <FilterButton
+            text="Under 200.000€"
+            action={() => filterOption(200000)}
+          />
+          <FilterButton
+            text="Under 400.000€"
+            action={() => filterOption(400000)}
+          />
+          <FilterButton
+            text="Under 600.000€"
+            action={() => filterOption(600000)}
+          />
+          <FilterButton
+            text="Under 800.000€"
+            action={() => filterOption(800000)}
+          />
+          <FilterButton
+            text="Under 1.000.000€"
+            action={() => filterOption(1000000)}
+          />
         </div>
       </FilterContainer>
       <PropertiesList allProperties={filterProperties} />
