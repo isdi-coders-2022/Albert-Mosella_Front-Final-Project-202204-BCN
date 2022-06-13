@@ -1,6 +1,7 @@
 import jwtDecode from "jwt-decode";
 import { useEffect } from "react";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import DetailPage from "./pages/DetailPage/DetailPage";
@@ -16,6 +17,7 @@ import { logInActionCreator } from "./redux/features/userSlice";
 import { useAppDispatch, useAppSelector } from "./redux/hooks";
 import { loadPropertiesThunk } from "./redux/thunks/propertyThunks/propertyThunks";
 import { User, UserInfo } from "./types/types";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -38,6 +40,18 @@ function App() {
 
   return (
     <>
+      <ToastContainer
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={true}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
       <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
