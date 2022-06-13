@@ -13,6 +13,10 @@ const Property = (props: Props): JSX.Element => {
 
   const goToDetails = (): void => {
     navigate(`/detailpage/${props.property.id}`);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
