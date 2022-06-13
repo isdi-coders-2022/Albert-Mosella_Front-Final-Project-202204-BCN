@@ -58,7 +58,6 @@ export const createPropertyThunk =
         }
       );
       correctAction("Property created!");
-      dispatch(loadPropertiesThunk());
       dispatch(createPropertyActionCreator(newProperty));
     } catch {
       wrongAction("Something went wrong creating a property!");
@@ -83,6 +82,5 @@ export const editPorpertyThunk =
       }
     );
     correctAction("Property updated!");
-    dispatch(loadPropertiesThunk());
     dispatch(editPropertyActionCreator(updatedProperty));
   };
