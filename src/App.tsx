@@ -50,7 +50,7 @@ function App() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="colored"
+        /* theme="colored" */
       />
       <Header />
       <Routes>
