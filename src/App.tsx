@@ -18,6 +18,7 @@ import { useAppDispatch, useAppSelector } from "./redux/hooks";
 import { loadPropertiesThunk } from "./redux/thunks/propertyThunks/propertyThunks";
 import { User, UserInfo } from "./types/types";
 import "react-toastify/dist/ReactToastify.css";
+import AboutPage from "./pages/AboutPage/AboutPage";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -68,6 +69,7 @@ function App() {
         <Route path="/propertyform" element={<PropertyFormPage />} />
         <Route path="/editproperty/:id" element={<EditPropertyPage />} />
         <Route path="/detailpage/:id" element={<DetailPage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />

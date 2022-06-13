@@ -1,7 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import FeaturedProperties from "../../components/FeaturedProperties/FeaturedProperties";
 import HomePageContainer from "./HomePageStyles";
 
 const HomePage = (): JSX.Element => {
+  const navigate = useNavigate();
+
+  const toAbout = () => {
+    navigate("/about");
+  };
+
   return (
     <HomePageContainer>
       <img
@@ -18,7 +25,9 @@ const HomePage = (): JSX.Element => {
           simul atque integre iudicante itaque aiunt hanc quasi involuta
           aperiri, altera occulta quaedam et voluptatem accusantium doloremque.
         </p>
-        <button className="long-button">Learn more</button>
+        <button className="long-button" onClick={toAbout}>
+          Learn more
+        </button>
       </div>
       <h3>Find your next place to live</h3>
       <div className="decoration-line"></div>

@@ -39,6 +39,7 @@ const HomePageContainer = styled.div`
     text-align: left;
     border: none;
     color: #ffac12;
+    cursor: pointer;
   }
 
   .photo-home {
