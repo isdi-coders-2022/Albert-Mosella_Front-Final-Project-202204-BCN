@@ -5,6 +5,7 @@ import {
   deletePropertyActionCreator,
   createPropertyActionCreator,
   loadAllPropertiesActionCreator,
+  editPropertyActionCreator,
 } from "../../features/propertySlice";
 import {
   setLoadedOffActionCreator,
@@ -68,6 +69,6 @@ export const editPorpertyThunk =
     });
 
     if (updatedProperty) {
-      dispatch(loadOnePropertyActionCreator(updatedProperty));
+      dispatch(editPropertyActionCreator(updatedProperty));
     }
   };
