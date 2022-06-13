@@ -77,7 +77,7 @@ const PropertyForm = (): JSX.Element => {
       top: 0,
       behavior: "smooth",
     });
-    navigate("/allproperties");
+    navigate("/all-properties");
   };
 
   return (

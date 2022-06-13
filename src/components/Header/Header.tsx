@@ -26,7 +26,7 @@ const Header = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/allproperties">Properties</NavLink>
+              <NavLink to="/all-properties">Properties</NavLink>
             </li>
             <li>
               {token ? (

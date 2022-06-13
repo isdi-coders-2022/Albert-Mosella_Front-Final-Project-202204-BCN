@@ -28,7 +28,7 @@ const LoginForm = (): JSX.Element => {
     event.preventDefault();
     dispatch(userLoginThunk(formValues));
     setFormValues(initialFormValue);
-    navigate("/allproperties");
+    navigate("/all-properties");
   };
 
   return (

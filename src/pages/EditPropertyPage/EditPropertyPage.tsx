@@ -21,7 +21,7 @@ const EditPropertyPage = (): JSX.Element => {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
   if (!token) {
-    navigate("/allproperties");
+    navigate("/all-properties");
   }
 
   return (

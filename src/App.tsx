@@ -62,7 +62,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route
-          path="/allproperties"
+          path="/all-properties"
           element={!loaded ? <LoadingPage /> : <PropertiesPage />}
         />
         <Route path="/propertyform" element={<PropertyFormPage />} />
