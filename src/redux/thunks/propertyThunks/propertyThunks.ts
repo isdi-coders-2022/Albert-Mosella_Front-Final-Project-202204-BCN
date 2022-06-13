@@ -75,11 +75,13 @@ export const getOnePorpertyThunk =
 export const editPorpertyThunk =
   (id: string, propertyData: any) => async (dispatch: AppDispatch) => {
     const token = localStorage.getItem("token");
-    const {
-      data: { updatedProperty },
-    } = await axios.put(`${url}properties/${id}`, propertyData, {
-      headers: { authorization: `Bearer ${token}` },
-    });
+    const { data: updatedProperty } = await axios.put(
+      `${url}properties/${id}`,
+      propertyData,
+      {
+        headers: { authorization: `Bearer ${token}` },
+      }
+    );
     correctAction("Property updated!");
     dispatch(loadPropertiesThunk());
     dispatch(editPropertyActionCreator(updatedProperty));
