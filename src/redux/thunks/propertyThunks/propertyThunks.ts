@@ -49,6 +49,7 @@ export const createPropertyThunk =
       }
     );
 
+    dispatch(loadPropertiesThunk());
     dispatch(createPropertyActionCreator(newProperty));
   };
 
@@ -67,8 +68,6 @@ export const editPorpertyThunk =
     } = await axios.put(`${url}properties/${id}`, propertyData, {
       headers: { authorization: `Bearer ${token}` },
     });
-
-    if (updatedProperty) {
-      dispatch(editPropertyActionCreator(updatedProperty));
-    }
+    dispatch(loadPropertiesThunk());
+    dispatch(editPropertyActionCreator(updatedProperty));
   };

@@ -73,6 +73,10 @@ const PropertyForm = (): JSX.Element => {
       : dispatch(createPropertyThunk(formValues));
     dispatch(blankStateActionCreator());
     setFormValues(initialFormValue);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
     navigate("/allproperties");
   };
 
