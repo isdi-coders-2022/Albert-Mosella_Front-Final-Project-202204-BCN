@@ -8,16 +8,29 @@ import PropertyForm from "./PropertyForm";
 describe("Given the PropertyForm component", () => {
   const inputText = "Nois";
   const inputNumber = 0;
-  const labelTextTypeof = "Type of";
-  const labelTextAdress = "Adress";
-  const labelTextName = "Name";
-  const labelTextSurface = "Surface";
-  const labelTextPrice = "Price";
-  const labelTextBedrooms = "Bedrooms";
-  const labelTextBathrooms = "Bathrooms";
-  const labelTextYear = "Year";
-  const labelTextDescription = "Description";
-  const labelTextImage = "Image";
+
+  const inputTextLabels = ["Type of", "Adress", "Name", "Description", "Image"];
+
+  const inputNumberLabels = [
+    "Surface",
+    "Price",
+    "Bedrooms",
+    "Bathrooms",
+    "Year",
+  ];
+
+  const checkBoxes = [
+    "Views",
+    "Air Conditioning",
+    "Heating",
+    "Parking",
+    "Pool",
+    "Fireplace",
+    "Garden",
+    "Laundry Room",
+    "Storage",
+    "Terrace",
+  ];
 
   describe("When it's invoked", () => {
     test("Then it should render all the input labels", () => {
@@ -29,16 +42,12 @@ describe("Given the PropertyForm component", () => {
         </Provider>
       );
 
-      expect(screen.getAllByText("Type of")).toHaveLength(1);
-      expect(screen.getAllByText("Adress")).toHaveLength(1);
-      expect(screen.getAllByText("Name")).toHaveLength(1);
-      expect(screen.getAllByText("Surface")).toHaveLength(1);
-      expect(screen.getAllByText("Price")).toHaveLength(1);
-      expect(screen.getAllByText("Bedrooms")).toHaveLength(1);
-      expect(screen.getAllByText("Bathrooms")).toHaveLength(1);
-      expect(screen.getAllByText("Year")).toHaveLength(1);
-      expect(screen.getAllByText("Description")).toHaveLength(1);
-      expect(screen.getAllByText("Image")).toHaveLength(1);
+      inputTextLabels.forEach((input) => {
+        expect(screen.getAllByText(input)).toHaveLength(1);
+      });
+      inputNumberLabels.forEach((input) => {
+        expect(screen.getAllByText(input)).toHaveLength(1);
+      });
     });
   });
 
@@ -52,30 +61,19 @@ describe("Given the PropertyForm component", () => {
         </Provider>
       );
 
-      userEvent.type(screen.getByLabelText(labelTextTypeof), inputText);
-      userEvent.type(screen.getByLabelText(labelTextAdress), inputText);
-      userEvent.type(screen.getByLabelText(labelTextName), inputText);
-      userEvent.type(screen.getByLabelText(labelTextSurface), inputText);
-      userEvent.type(screen.getByLabelText(labelTextPrice), inputText);
-      userEvent.type(screen.getByLabelText(labelTextBedrooms), inputText);
-      userEvent.type(screen.getByLabelText(labelTextBathrooms), inputText);
-      userEvent.type(screen.getByLabelText(labelTextYear), inputText);
-      userEvent.type(screen.getByLabelText(labelTextDescription), inputText);
-      userEvent.type(screen.getByLabelText(labelTextImage), inputText);
-      expect(screen.getByLabelText(labelTextTypeof)).toHaveValue(inputText);
-      expect(screen.getByLabelText(labelTextAdress)).toHaveValue(inputText);
-      expect(screen.getByLabelText(labelTextName)).toHaveValue(inputText);
-      expect(screen.getByLabelText(labelTextSurface)).toHaveValue(inputNumber);
-      expect(screen.getByLabelText(labelTextPrice)).toHaveValue(inputNumber);
-      expect(screen.getByLabelText(labelTextBedrooms)).toHaveValue(inputNumber);
-      expect(screen.getByLabelText(labelTextBathrooms)).toHaveValue(
-        inputNumber
-      );
-      expect(screen.getByLabelText(labelTextYear)).toHaveValue(inputNumber);
-      expect(screen.getByLabelText(labelTextDescription)).toHaveValue(
-        inputText
-      );
-      expect(screen.getByLabelText(labelTextImage)).toHaveValue(inputText);
+      inputTextLabels.forEach((input) => {
+        userEvent.type(screen.getByLabelText(input), inputText);
+      });
+      inputNumberLabels.forEach((input) => {
+        userEvent.type(screen.getByLabelText(input), inputText);
+      });
+
+      inputTextLabels.forEach((input) => {
+        expect(screen.getByLabelText(input)).toHaveValue(inputText);
+      });
+      inputNumberLabels.forEach((input) => {
+        expect(screen.getByLabelText(input)).toHaveValue(inputNumber);
+      });
     });
   });
 
@@ -89,31 +87,23 @@ describe("Given the PropertyForm component", () => {
         </Provider>
       );
 
-      userEvent.type(screen.getByLabelText(labelTextTypeof), inputText);
-      userEvent.type(screen.getByLabelText(labelTextAdress), inputText);
-      userEvent.type(screen.getByLabelText(labelTextName), inputText);
-      userEvent.type(screen.getByLabelText(labelTextSurface), inputText);
-      userEvent.type(screen.getByLabelText(labelTextPrice), inputText);
-      userEvent.type(screen.getByLabelText(labelTextBedrooms), inputText);
-      userEvent.type(screen.getByLabelText(labelTextBathrooms), inputText);
-      userEvent.type(screen.getByLabelText(labelTextYear), inputText);
-      userEvent.type(screen.getByLabelText(labelTextDescription), inputText);
-      userEvent.type(screen.getByLabelText(labelTextImage), inputText);
+      inputTextLabels.forEach((input) => {
+        userEvent.type(screen.getByLabelText(input), inputText);
+      });
+      inputNumberLabels.forEach((input) => {
+        userEvent.type(screen.getByLabelText(input), inputText);
+      });
 
       const button = screen.getByRole("button");
 
       userEvent.click(button);
 
-      expect(screen.getByLabelText(labelTextTypeof)).toHaveValue("");
-      expect(screen.getByLabelText(labelTextAdress)).toHaveValue("");
-      expect(screen.getByLabelText(labelTextName)).toHaveValue("");
-      expect(screen.getByLabelText(labelTextSurface)).toHaveValue(0);
-      expect(screen.getByLabelText(labelTextPrice)).toHaveValue(0);
-      expect(screen.getByLabelText(labelTextBedrooms)).toHaveValue(0);
-      expect(screen.getByLabelText(labelTextBathrooms)).toHaveValue(0);
-      expect(screen.getByLabelText(labelTextYear)).toHaveValue(0);
-      expect(screen.getByLabelText(labelTextDescription)).toHaveValue("");
-      expect(screen.getByLabelText(labelTextImage)).toHaveValue("");
+      inputTextLabels.forEach((input) => {
+        expect(screen.getByLabelText(input)).toHaveValue("");
+      });
+      inputNumberLabels.forEach((input) => {
+        expect(screen.getByLabelText(input)).toHaveValue(0);
+      });
     });
   });
 
@@ -127,9 +117,13 @@ describe("Given the PropertyForm component", () => {
         </Provider>
       );
 
-      userEvent.click(screen.getByLabelText("Views"));
+      checkBoxes.forEach((checkbox) => {
+        userEvent.click(screen.getByLabelText(checkbox));
+      });
 
-      expect(screen.getByLabelText("Views")).toBeChecked();
+      checkBoxes.forEach((checkbox) => {
+        expect(screen.getByLabelText(checkbox)).toBeChecked();
+      });
     });
   });
 });
