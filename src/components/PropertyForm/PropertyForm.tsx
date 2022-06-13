@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { blankStateActionCreator } from "../../redux/features/onePropertySlice";
+import {
+  createPropertyActionCreator,
+  editPropertyActionCreator,
+} from "../../redux/features/propertySlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
   createPropertyThunk,
@@ -68,9 +72,14 @@ const PropertyForm = (): JSX.Element => {
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    formValues.id
-      ? dispatch(editPorpertyThunk(formValues.id, formValues))
-      : dispatch(createPropertyThunk(formValues));
+    if (formValues.id) {
+      dispatch(editPorpertyThunk(formValues.id, formValues));
+      dispatch(editPropertyActionCreator(formValues));
+    } else {
+      dispatch(createPropertyThunk(formValues));
+      dispatch(createPropertyActionCreator(formValues));
+    }
+
     dispatch(blankStateActionCreator());
     setFormValues(initialFormValue);
     navigate("/allproperties");

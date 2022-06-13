@@ -26,6 +26,12 @@ const propertySlice = createSlice({
       ...properties,
       allProperties: [...properties.allProperties, action.payload],
     }),
+    editProperty: (properties, action) => ({
+      ...properties,
+      allProperties: properties.allProperties.map((property) =>
+        property.id === action.payload.id ? action.payload : property
+      ),
+    }),
   },
 });
 
@@ -35,4 +41,5 @@ export const {
   loadAllProperties: loadAllPropertiesActionCreator,
   deleteProperty: deletePropertyActionCreator,
   createProperty: createPropertyActionCreator,
+  editProperty: editPropertyActionCreator,
 } = propertySlice.actions;
