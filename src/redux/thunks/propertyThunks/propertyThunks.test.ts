@@ -106,7 +106,7 @@ describe("Given the createPropertyThunk thunk", () => {
 
       await createPropertyThunkTest(dispatch);
 
-      expect(dispatch).toHaveBeenNthCalledWith(1, expectedAction);
+      expect(dispatch).toHaveBeenNthCalledWith(2, expectedAction);
     });
   });
 });

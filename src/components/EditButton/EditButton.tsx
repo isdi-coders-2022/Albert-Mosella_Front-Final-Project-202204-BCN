@@ -44,6 +44,10 @@ const EditButton = ({ id }: Props): JSX.Element => {
 
   const handleEdit = (): void => {
     navigate(`/editproperty/${id}`);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
