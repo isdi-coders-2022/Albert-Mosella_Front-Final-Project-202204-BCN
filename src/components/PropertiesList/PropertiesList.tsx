@@ -37,6 +37,10 @@ const PropertiesList = (props: Props): JSX.Element => {
           onClick={() => {
             if (index >= 9) {
               setIndex(index - 9);
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
             }
           }}
         >
@@ -46,6 +50,10 @@ const PropertiesList = (props: Props): JSX.Element => {
           onClick={() => {
             if (index < props.allProperties.length - 9) {
               setIndex(index + 9);
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
             }
           }}
         >
