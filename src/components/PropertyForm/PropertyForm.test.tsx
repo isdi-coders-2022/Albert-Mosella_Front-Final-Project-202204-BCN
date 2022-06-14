@@ -94,7 +94,7 @@ describe("Given the PropertyForm component", () => {
         userEvent.type(screen.getByLabelText(input), inputText);
       });
 
-      const button = screen.getByRole("button");
+      const button = screen.getByRole("button", { name: /Save/i });
 
       userEvent.click(button);
 
