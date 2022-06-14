@@ -47,7 +47,7 @@ const PropertyContainer = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    padding: 30px 20px 20px 20px;
+    padding: 20px;
     list-style: none;
     margin: auto;
 

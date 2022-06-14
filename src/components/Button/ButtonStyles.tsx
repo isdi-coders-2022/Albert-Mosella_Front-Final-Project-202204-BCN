@@ -11,7 +11,7 @@ const ButtonContainer = styled.div`
   border-radius: 25px;
   box-shadow: 0px 32px 34px rgba(0, 0, 0, 0.133714);
   overflow: hidden;
-  margin-top: 5px;
+  margin-top: 0px;
 
   button {
     width: 100%;
