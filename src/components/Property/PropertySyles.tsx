@@ -8,6 +8,11 @@ const PropertyContainer = styled.div`
   background-color: white;
   box-shadow: 0px 32px 34px rgba(0, 0, 0, 0.133714);
   cursor: pointer;
+  transition: all 0.4s ease;
+
+  :hover {
+    transform: scale(1.05);
+  }
 
   .image-container {
     width: 315px;
