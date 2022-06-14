@@ -291,7 +291,9 @@ const PropertyForm = (): JSX.Element => {
           >
             Save
           </button>
-          <button onClick={backHome}>Go back to Home</button>
+          <button className="back-button" onClick={backHome}>
+            Go back to Home
+          </button>
         </form>
       </PropertyFormStyle>
     </>
