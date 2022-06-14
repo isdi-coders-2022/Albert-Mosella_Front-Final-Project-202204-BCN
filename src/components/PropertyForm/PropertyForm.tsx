@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { blankStateActionCreator } from "../../redux/features/onePropertySlice";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
@@ -78,6 +78,14 @@ const PropertyForm = (): JSX.Element => {
       behavior: "smooth",
     });
     navigate("/all-properties");
+  };
+
+  const backHome = () => {
+    navigate("/home");
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
@@ -283,7 +291,7 @@ const PropertyForm = (): JSX.Element => {
           >
             Save
           </button>
-          <NavLink to="/home">Go back to Home</NavLink>
+          <button onClick={backHome}>Go back to Home</button>
         </form>
       </PropertyFormStyle>
     </>
