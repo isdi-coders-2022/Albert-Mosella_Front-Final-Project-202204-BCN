@@ -77,8 +77,8 @@ describe("Given the PropertyForm component", () => {
     });
   });
 
-  describe("When the username and password input fields are fill and the button clicked", () => {
-    test("Then the value of the username and password input fields should be empty", () => {
+  describe("When the submit button is clicked", () => {
+    test("Then the value of the input fields should be empty", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
