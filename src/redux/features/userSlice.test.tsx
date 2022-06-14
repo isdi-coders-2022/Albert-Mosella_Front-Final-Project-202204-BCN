@@ -1,6 +1,8 @@
+import userSlice from "./userSlice";
 import userReducer, {
   logInActionCreator,
   logOutActionCreator,
+  registerActionCreator,
 } from "./userSlice";
 
 describe("Given a userSlice reducer", () => {
@@ -23,6 +25,7 @@ describe("Given a userSlice reducer", () => {
       expect(loggedUser).toEqual(expectedUser);
     });
   });
+
   describe("When it receives a logout action", () => {
     test("Then it should switch the user logged property at false", () => {
       const loggedUser = {
@@ -36,6 +39,32 @@ describe("Given a userSlice reducer", () => {
       const loggedoutUser = userReducer(loggedUser, logoutAction);
 
       expect(loggedoutUser.logged).toEqual(expectedUserStatus);
+    });
+  });
+
+  describe("When it receives an initial state status and a register action with the register user credentials", () => {
+    test("Then it should return the new user state with the received user credentials and the logged property false", () => {
+      const initialState = {
+        username: "",
+        name: "",
+        logged: false,
+      };
+
+      const mockUserRegister = {
+        username: "Nois",
+        name: "Nois",
+        password: "Nois",
+      };
+
+      const expectedState = {
+        ...mockUserRegister,
+        logged: false,
+      };
+
+      const registerAction = registerActionCreator(mockUserRegister);
+      const userStatus = userSlice(initialState, registerAction);
+
+      expect(userStatus).toEqual(expectedState);
     });
   });
 });
