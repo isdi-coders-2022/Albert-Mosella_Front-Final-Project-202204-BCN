@@ -30,16 +30,26 @@ const HomePageContainer = styled.div`
   }
 
   .long-button {
-    margin-right: 20px;
-    width: 250px;
-    height: 40px;
-    border-top-right-radius: 20px;
-    background: black;
     font-size: 1em;
     text-align: left;
     border: none;
-    color: #ffac12;
-    cursor: pointer;
+    display: inline-block;
+    color: orange;
+    background: black;
+    text-decoration: none;
+    padding: 20px 20px;
+    width: 250px;
+    height: 50px;
+    border-top-right-radius: 20px;
+  }
+
+  .long-button:hover {
+    animation: pulsate 2s ease-in-out;
+    @keyframes pulsate {
+      0% {
+        box-shadow: 0 0 25px #ffa600, 0 0 50px #ffa600;
+      }
+    }
   }
 
   .photo-home {
