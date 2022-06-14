@@ -67,6 +67,24 @@ const PropertyFormStyle = styled.div`
     color: orange;
     cursor: pointer;
     border-top-right-radius: 20px;
+    box-shadow: 0px 32px 34px rgba(0, 0, 0, 0.133714);
+  }
+
+  .back-button {
+    width: 100%;
+    height: 100%;
+    background: white;
+    cursor: pointer;
+    margin: 0px;
+    border: none;
+    font-size: 1.5em;
+    font-family: "Abel", sans-serif;
+    margin-bottom: 25px;
+    box-shadow: 0px 32px 34px rgba(0, 0, 0, 0.133714);
+  }
+
+  .back-button:hover {
+    background: green;
   }
 
   a {
