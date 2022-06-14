@@ -31,7 +31,7 @@ describe("Given a HomePage Component", () => {
     });
   });
 
-  describe("When it's invoked, and the user clicks on Learn More nutton", () => {
+  describe("When it's invoked, and the user clicks on Learn More button", () => {
     test("Then navigate must be called", () => {
       render(
         <Provider store={store}>

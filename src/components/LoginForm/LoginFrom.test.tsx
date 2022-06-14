@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
 import LoginForm from "./LoginForm";
 
-describe("Given the RegisterForm component", () => {
+describe("Given the LoginForm component", () => {
   const inputText = "Nois";
   const labelTextPassword = "Password";
   const labelTextUsername = "Username";
@@ -20,8 +20,8 @@ describe("Given the RegisterForm component", () => {
         </Provider>
       );
 
-      expect(screen.getAllByText("Username")).toHaveLength(1);
-      expect(screen.getAllByText("Password")).toHaveLength(1);
+      expect(screen.getByText("Username")).toBeInTheDocument();
+      expect(screen.getByText("Password")).toBeInTheDocument();
     });
   });
 

@@ -27,8 +27,8 @@ describe("Given the RegisterForm component", () => {
     });
   });
 
-  describe("When the word 'Nois' is written to the username input field", () => {
-    test("Then the value of the username input field should be 'Nois'", () => {
+  describe("When the word 'Nois' is written to the username, name and password input fields", () => {
+    test("Then the value of the username, name and password input fields should be 'Nois'", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>
@@ -46,8 +46,8 @@ describe("Given the RegisterForm component", () => {
     });
   });
 
-  describe("When the username and password input fields are fill and the button clicked", () => {
-    test("Then the value of the username and password input fields should be empty", () => {
+  describe("When the username, name and password input fields are fill and the button clicked", () => {
+    test("Then the value of the username, name and password input fields should be empty", () => {
       render(
         <Provider store={store}>
           <BrowserRouter>

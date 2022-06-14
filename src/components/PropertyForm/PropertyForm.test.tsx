@@ -43,10 +43,10 @@ describe("Given the PropertyForm component", () => {
       );
 
       inputTextLabels.forEach((input) => {
-        expect(screen.getAllByText(input)).toHaveLength(1);
+        expect(screen.getByText(input)).toBeInTheDocument();
       });
       inputNumberLabels.forEach((input) => {
-        expect(screen.getAllByText(input)).toHaveLength(1);
+        expect(screen.getByText(input)).toBeInTheDocument();
       });
     });
   });
