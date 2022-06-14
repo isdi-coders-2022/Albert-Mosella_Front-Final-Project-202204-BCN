@@ -23,7 +23,12 @@ const Property = (props: Props): JSX.Element => {
     <PropertyContainer>
       <div onClick={goToDetails}>
         <div className="image-container">
-          <img src={props.property.image} alt="house perspective" />
+          <img
+            src={
+              props.property.image ? props.property.image : "images/worker.jpg"
+            }
+            alt="house perspective"
+          />
         </div>
         <div className="property-title">
           <h4>{props.property.name}</h4>
