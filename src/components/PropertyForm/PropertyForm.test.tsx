@@ -5,6 +5,13 @@ import { BrowserRouter } from "react-router-dom";
 import store from "../../redux/store/store";
 import PropertyForm from "./PropertyForm";
 
+const mockNavigate = jest.fn();
+
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => mockNavigate,
+}));
+
 describe("Given the PropertyForm component", () => {
   const inputText = "Nois";
   const inputNumber = 0;
@@ -124,6 +131,23 @@ describe("Given the PropertyForm component", () => {
       checkBoxes.forEach((checkbox) => {
         expect(screen.getByLabelText(checkbox)).toBeChecked();
       });
+    });
+  });
+
+  describe("When it's invoked and the clicks on Back Home button", () => {
+    test("Then it should call navigate", () => {
+      render(
+        <Provider store={store}>
+          <BrowserRouter>
+            <PropertyForm />
+          </BrowserRouter>
+        </Provider>
+      );
+
+      const button = screen.getByRole("button", { name: /Go back to Home/i });
+      userEvent.click(button);
+
+      expect(mockNavigate).toHaveBeenCalled();
     });
   });
 });
