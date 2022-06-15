@@ -34,6 +34,20 @@ const PropertiesList = (props: Props): JSX.Element => {
       </ul>
       <div className="page-buttons">
         <button
+          className="end-button"
+          onClick={() => {
+            if (index >= 9) {
+              setIndex(0);
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }
+          }}
+        >
+          {"<<"}
+        </button>
+        <button
           onClick={() => {
             if (index >= 9) {
               setIndex(index - 9);
@@ -58,6 +72,19 @@ const PropertiesList = (props: Props): JSX.Element => {
           }}
         >
           Next
+        </button>
+        <button
+          onClick={() => {
+            if (index < props.allProperties.length - 9) {
+              setIndex(27);
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }
+          }}
+        >
+          {">>"}
         </button>
       </div>
     </PropertiesListContainer>
