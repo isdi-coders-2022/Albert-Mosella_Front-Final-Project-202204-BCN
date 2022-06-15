@@ -8,7 +8,7 @@ import FilterPrice from "./FilterPrice";
 describe("Given the FilterPrice component", () => {
   describe("When it's invoked", () => {
     test("Then it should render 3 button elements", () => {
-      const expectedLenght = 3;
+      const expectedLenght = 5;
 
       render(
         <Provider store={store}>
@@ -25,8 +25,8 @@ describe("Given the FilterPrice component", () => {
   });
 
   describe("When it's invoked and the filter button clicked", () => {
-    test("Then it should render 9 button elements", () => {
-      const expectedLenght = 9;
+    test("Then it should render 11 button elements", () => {
+      const expectedLenght = 11;
 
       render(
         <Provider store={store}>
@@ -46,7 +46,7 @@ describe("Given the FilterPrice component", () => {
 
   describe("When it's invoked and the filter button clicked, and a filter option clicked", () => {
     test("Then it should render 3 button elements", () => {
-      const expectedLenght = 3;
+      const expectedLenght = 5;
 
       render(
         <Provider store={store}>

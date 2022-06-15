@@ -25,7 +25,7 @@ const PropertiesListContainer = styled.div`
     button {
       border-radius: 25px;
       box-shadow: 0px 32px 34px rgba(0, 0, 0, 0.133714);
-      width: 40%;
+      width: 20%;
       height: 50px;
       background-color: white;
       border: none;
