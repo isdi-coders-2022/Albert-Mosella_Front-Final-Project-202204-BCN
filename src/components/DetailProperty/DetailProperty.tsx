@@ -20,7 +20,10 @@ const DetailProperty = () => {
   return (
     <DetailPropertyContainer>
       <div className="image-container">
-        <img src={oneProperty.image} alt="house perspective" />
+        <img
+          src={oneProperty.image ? oneProperty.image : "/images/worker.jpg"}
+          alt="house perspective"
+        />
       </div>
       <div className="main-details">
         <div className="property-title">

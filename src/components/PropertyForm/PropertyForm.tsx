@@ -48,21 +48,13 @@ const PropertyForm = (): JSX.Element => {
     }
   }, [oneProperty]);
 
-  const handleCheckboxChange = (event: {
-    target: { id: string; checked: boolean };
-  }) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFormValues({
       ...formValues,
-      [event.target.id]: event.target.checked,
-    });
-  };
-
-  const handleInputChange = (event: {
-    target: { id: string; value: string };
-  }) => {
-    setFormValues({
-      ...formValues,
-      [event.target.id]: event.target.value,
+      [event.target.id]:
+        event.target.type === "checkbox"
+          ? event.target.checked
+          : event.target.value,
     });
   };
 
@@ -177,7 +169,8 @@ const PropertyForm = (): JSX.Element => {
             autoComplete="off"
           />
           <label htmlFor="description">Description</label>
-          <textarea
+          <input
+            className="textarea"
             id="description"
             maxLength={260}
             value={formValues.description}
@@ -191,7 +184,7 @@ const PropertyForm = (): JSX.Element => {
                   type="checkbox"
                   id="views"
                   checked={formValues.views}
-                  onChange={handleCheckboxChange}
+                  onChange={handleInputChange}
                 />
                 <label htmlFor="views">Views</label>
               </div>
@@ -200,7 +193,7 @@ const PropertyForm = (): JSX.Element => {
                   type="checkbox"
                   id="airConditioning"
                   checked={formValues.airConditioning}
-                  onChange={handleCheckboxChange}
+                  onChange={handleInputChange}
                 />
                 <label htmlFor="airConditioning">Air Conditioning</label>
               </div>
@@ -209,7 +202,7 @@ const PropertyForm = (): JSX.Element => {
                   type="checkbox"
                   id="heating"
                   checked={formValues.heating}
-                  onChange={handleCheckboxChange}
+                  onChange={handleInputChange}
                 />
                 <label htmlFor="heating">Heating</label>
               </div>
@@ -218,7 +211,7 @@ const PropertyForm = (): JSX.Element => {
                   type="checkbox"
                   id="parking"
                   checked={formValues.parking}
-                  onChange={handleCheckboxChange}
+                  onChange={handleInputChange}
                 />
                 <label htmlFor="parking">Parking</label>
               </div>
@@ -227,7 +220,7 @@ const PropertyForm = (): JSX.Element => {
                   type="checkbox"
                   id="pool"
                   checked={formValues.pool}
-                  onChange={handleCheckboxChange}
+                  onChange={handleInputChange}
                 />
                 <label htmlFor="pool">Pool</label>
               </div>
@@ -238,7 +231,7 @@ const PropertyForm = (): JSX.Element => {
                   type="checkbox"
                   id="fireplace"
                   checked={formValues.fireplace}
-                  onChange={handleCheckboxChange}
+                  onChange={handleInputChange}
                 />
                 <label htmlFor="fireplace">Fireplace</label>
               </div>
@@ -247,7 +240,7 @@ const PropertyForm = (): JSX.Element => {
                   type="checkbox"
                   id="garden"
                   checked={formValues.garden}
-                  onChange={handleCheckboxChange}
+                  onChange={handleInputChange}
                 />
                 <label htmlFor="garden">Garden</label>
               </div>
@@ -256,7 +249,7 @@ const PropertyForm = (): JSX.Element => {
                   type="checkbox"
                   id="laundryRoom"
                   checked={formValues.laundryRoom}
-                  onChange={handleCheckboxChange}
+                  onChange={handleInputChange}
                 />
                 <label htmlFor="laundryRoom">Laundry Room</label>
               </div>
@@ -265,7 +258,7 @@ const PropertyForm = (): JSX.Element => {
                   type="checkbox"
                   id="storage"
                   checked={formValues.storage}
-                  onChange={handleCheckboxChange}
+                  onChange={handleInputChange}
                 />
                 <label htmlFor="storage">Storage</label>
               </div>
@@ -274,7 +267,7 @@ const PropertyForm = (): JSX.Element => {
                   type="checkbox"
                   id="terrace"
                   checked={formValues.terrace}
-                  onChange={handleCheckboxChange}
+                  onChange={handleInputChange}
                 />
                 <label htmlFor="terrace">Terrace</label>
               </div>
