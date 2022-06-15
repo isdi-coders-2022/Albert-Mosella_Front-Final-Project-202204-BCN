@@ -11,16 +11,16 @@ describe("empty spec", () => {
 
     cy.get(`[class="long-button"]`).contains("Add a new property").click();
 
-    cy.get("label").contains("Type of").type("House");
-    cy.get("label").contains("Adress").type("House");
-    cy.get("label").contains("Name").type("House");
+    cy.get("label").contains("Type of").type("Test House");
+    cy.get("label").contains("Adress").type("Test House");
+    cy.get("label").contains("Name").type("Test House");
     cy.get("label").contains("Surface").type("9");
     cy.get("label").contains("Price").type("9");
     cy.get("label").contains("Bedrooms").type("9");
     cy.get("label").contains("Bathrooms").type("9");
     cy.get("label").contains("Year").type("9");
-    cy.get("label").contains("Image").type("House");
-    cy.get("label").contains("Description").type("House");
+    cy.get("label").contains("Image").type("https://imgur.com/DPOhOUC.jpg");
+    cy.get("label").contains("Description").type("Test House");
     cy.get("label").contains("Views").click();
     cy.get("label").contains("Air Conditioning").click();
     cy.get("label").contains("Heating").click();
@@ -35,5 +35,6 @@ describe("empty spec", () => {
     cy.get(`[class="form-button"]`).contains("Save").click();
 
     cy.get("button").contains(">>").click();
+    cy.get("h4").should("contain.text", "Test House");
   });
 });
