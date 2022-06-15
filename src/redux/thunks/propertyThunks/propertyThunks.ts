@@ -38,6 +38,7 @@ export const deletePropertyThunk =
         headers: { authorization: `Bearer ${token}` },
       });
       if (status === 200) {
+        debugger;
         correctAction("Property deleted!");
         dispatch(deletePropertyActionCreator(id));
       }

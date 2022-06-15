@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import { IProperty } from "../../types/types";
 import Property from "../Property/Property";
 import PropertiesListContainer from "./PropertiesListStyles";
@@ -76,7 +75,7 @@ const PropertiesList = (props: Props): JSX.Element => {
         <button
           onClick={() => {
             if (index < props.allProperties.length - 9) {
-              setIndex(27);
+              setIndex(props.allProperties.length - 9);
               window.scrollTo({
                 top: 0,
                 behavior: "smooth",

@@ -40,7 +40,6 @@ describe("Given the Property component", () => {
       userEvent.click(screen.getByText("Next"));
 
       const result = screen.getAllByRole("list");
-
       expect(result).toHaveLength(expectedLenght);
     });
   });

@@ -6,6 +6,7 @@ import {
   createPropertyThunk,
   editPorpertyThunk,
 } from "../../redux/thunks/propertyThunks/propertyThunks";
+import { IProperty } from "../../types/types";
 
 import PropertyFormStyle from "./PropertyFormStyles";
 
@@ -14,7 +15,7 @@ const PropertyForm = (): JSX.Element => {
 
   const navigate = useNavigate();
 
-  const initialFormValue = {
+  const initialFormValue: IProperty = {
     typeOf: "",
     adress: "",
     name: "",
