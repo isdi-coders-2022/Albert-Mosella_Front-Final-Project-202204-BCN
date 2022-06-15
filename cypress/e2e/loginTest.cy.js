@@ -33,8 +33,5 @@ describe("empty spec", () => {
     cy.get("label").contains("Terrace").click();
 
     cy.get(`[class="form-button"]`).contains("Save").click();
-
-    cy.get("button").contains(">>").click();
-    cy.get("h4").should("contain.text", "Test House");
   });
 });
