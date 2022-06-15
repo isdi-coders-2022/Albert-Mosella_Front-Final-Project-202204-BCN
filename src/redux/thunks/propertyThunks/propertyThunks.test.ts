@@ -13,6 +13,7 @@ import {
 import { loadOnePropertyActionCreator } from "../../features/onePropertySlice";
 import mockProperty from "../../../mocks/mockProperty";
 import axios from "axios";
+import * as toasters from "../../../modals/modals";
 
 beforeEach(() => server.listen());
 afterEach(() => server.resetHandlers());
@@ -56,6 +57,20 @@ describe("Given a loadPropertiesThunk function", () => {
       expect(dispatch).toHaveBeenCalledWith(expectedAction);
     });
   });
+
+  describe("When loadPropertiesThunk it's invoked but there's no response", () => {
+    test("Then it should call wrongAction toastify", async () => {
+      const dispatch = jest.fn();
+      const mockWrongAction = jest.spyOn(toasters, "wrongAction");
+
+      axios.get = jest.fn().mockRejectedValueOnce(new Error());
+
+      const thunk = await loadPropertiesThunk();
+      await thunk(dispatch);
+
+      expect(mockWrongAction).toHaveBeenLastCalledWith("Something went wrong");
+    });
+  });
 });
 
 describe("Given a getOnePorpertyThunk function", () => {
@@ -89,6 +104,22 @@ describe("Given a deletePropertyThunk function", () => {
       expect(dispatch).toHaveBeenCalledWith(deleteAction);
     });
   });
+
+  describe("When deletePropertyThunk it's invoked but an error ocurs", () => {
+    test("Then it should call wrongAction toastify", async () => {
+      const dispatch = jest.fn();
+
+      const mockWrongAction = jest.spyOn(toasters, "wrongAction");
+      axios.delete = jest.fn().mockRejectedValueOnce(new Error());
+
+      const thunk = await deletePropertyThunk(mockProperty.id);
+      await thunk(dispatch);
+
+      expect(mockWrongAction).toHaveBeenLastCalledWith(
+        "Something went wrong deleting a property!"
+      );
+    });
+  });
 });
 
 describe("Given the createPropertyThunk thunk", () => {
@@ -107,6 +138,22 @@ describe("Given the createPropertyThunk thunk", () => {
       await createPropertyThunkTest(dispatch);
 
       expect(dispatch).toHaveBeenNthCalledWith(1, expectedAction);
+    });
+  });
+
+  describe("When createPropertyThunk it's invoked but an error occurs", () => {
+    test("Then it should call wrongAction toastify", async () => {
+      const mockWrongAction = jest.spyOn(toasters, "wrongAction");
+
+      axios.post = jest.fn().mockRejectedValueOnce(new Error());
+      const dispatch = jest.fn();
+
+      const thunk = await createPropertyThunk(mockProperty);
+      await thunk(dispatch);
+
+      expect(mockWrongAction).toHaveBeenLastCalledWith(
+        "Something went wrong creating a property!"
+      );
     });
   });
 });
