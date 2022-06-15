@@ -36,7 +36,7 @@ const PropertyFormStyle = styled.div`
     border: 2px solid #ebebeb;
   }
 
-  textarea {
+  .textarea {
     height: 120px;
     width: 80%;
     margin-top: 10px;
