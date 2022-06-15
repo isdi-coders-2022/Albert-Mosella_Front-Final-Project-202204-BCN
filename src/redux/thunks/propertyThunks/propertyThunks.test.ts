@@ -1,6 +1,7 @@
 import {
   createPropertyThunk,
   deletePropertyThunk,
+  editPorpertyThunk,
   getOnePorpertyThunk,
   loadPropertiesThunk,
 } from "./propertyThunks";
@@ -154,6 +155,26 @@ describe("Given the createPropertyThunk thunk", () => {
       expect(mockWrongAction).toHaveBeenLastCalledWith(
         "Something went wrong creating a property!"
       );
+    });
+  });
+});
+
+describe("Given a editPorpertyThunk function", () => {
+  describe("When a logged user invokes it with an existant id and a new form", () => {
+    test("Then it should call the toast succes method", async () => {
+      const idToDelete = "1";
+
+      axios.put = jest.fn().mockResolvedValue(mockProperty);
+      const dispatch = jest.fn();
+      jest.spyOn(Storage.prototype, "getItem").mockReturnValue("token");
+      const mockCorrectAction = jest.spyOn(toasters, "correctAction");
+
+      const thunk = editPorpertyThunk(idToDelete, mockProperty);
+
+      await thunk(dispatch);
+
+      expect(dispatch).toHaveBeenCalled();
+      expect(mockCorrectAction).toHaveBeenCalled();
     });
   });
 });
